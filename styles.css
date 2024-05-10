@@ -868,6 +868,9 @@ body {
     flex: 9;   
 
     padding: 0 40px;
+
+    overflow: auto;
+    overflow-y: scroll;
 }
 
 /* LABELS */
