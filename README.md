@@ -23,5 +23,5 @@ Developers
 - Jhonwell Espanola (Implenting API's)
 - Neo Isaiah Nimo (WEB DESIGN)
 - Kenzo Shenel Vidal (Responsiveness, Desktop ver)
-- Christian Denz Sabalboro (Responsiveness, Mobile ver)
+- Denz Christian Sabalboro (Responsiveness, Mobile ver)
 "# BOOKOLEKSYON" 
