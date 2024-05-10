@@ -440,6 +440,7 @@ body {
 .separator{
     display: flex;
     justify-content: space-around;
+ 
     align-items: center;
     padding: 20px 30px;
 
@@ -453,8 +454,9 @@ body {
     border-radius: 15px;
     transition: all 0.3s ease;
 
-
     color: var(--black-text);
+    align-items: center;
+    transition: all 0.3s ease;
 }
 
 .separator .item h3{
@@ -463,11 +465,12 @@ body {
     font-size: .85rem;
     border-bottom: 3px solid transparent;
     padding-bottom: .3em;
+    transition: all 0.3s ease;
 }
-
 .separator .item:hover {
     cursor: pointer;
     background-color: var(--panels);
+    transition: all 0.3s ease;
 }
 
 .separator .item:not(.active):hover h3 {
@@ -481,6 +484,7 @@ body {
 
 .separator .item.active h3{
     /* transform: scale(1.2);  */
+   
     font-weight: 600;
     /* text-decoration: underline var(--light-purple) 4px; */
     padding-bottom: 0;
@@ -553,7 +557,7 @@ body {
     flex-direction: column;
     flex: 1;
     align-items: start;
-    
+
     padding: 30px 0 10px;
     border-top-left-radius: 20px;
     border: 2px solid var(--panel-border);
@@ -775,13 +779,12 @@ body {
 .information {
     display: none;
     flex-direction: row;
-
     width: calc(100% - 60px);
-    height: calc(100svh - 100px);
+    height: calc(100svh + 200px);
     margin: auto;
     padding: 43px 10px;
-
     position: relative;
+    overflow-y: auto
 }
 
 /* BACK BUTTON */
@@ -876,6 +879,9 @@ body {
     flex: 9;   
 
     padding: 0 40px;
+
+    overflow: auto;
+    overflow-y: scroll;
 }
 
 /* LABELS */
