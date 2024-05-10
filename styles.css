@@ -447,13 +447,11 @@ body {
 
 .separator .item{
     display: flex;
-    align-items: center;
     padding: 20px 40px;
     border-radius: 20px;
-    transition: all 0.3s ease;
-
-
     color: var(--black-text);
+    align-items: center;
+    transition: all 0.3s ease;
 }
 
 .separator .item h3{
