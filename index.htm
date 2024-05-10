@@ -4,8 +4,482 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bookleksyon</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  
+  <div class="header">
+    <div class="web-title">
+      <div class="web-logo">
+        <img src="resource/open-book-svgrepo-com.svg" alt=""> </img>
+      </div>
+      <h3>Bookoleksyon</h3>
+    </div>
+    <div class="search">
+      <button id="search">
+        <img src="resource/search-svgrepo-com.svg" alt="search icon">
+      </button>
+      <input id="input" type="text" placeholder="Search for titles, authors, or genres...">
+      <button id="filter">
+        <img src="resource/filter-svgrepo-com.svg" alt="filter icon">
+      </button>
+
+      <div class="filter" id="filter-box">
+        <div class="label">
+          <h3>Filter Search</h3>
+        </div>
+        <form>
+          <h3>Genre</h3>
+          <div class="genre">
+            <div class="left">
+              <div class="item">
+                <input type="checkbox">
+                <label>Fiction</label> 
+              </div>
+              <div class="item">
+                <input type="checkbox">
+                <label>Biography</label>
+              </div>
+              <div class="item">
+                <input type="checkbox">
+                <label>History</label> 
+              </div>
+              <div class="item">
+                <input type="checkbox">
+                <label>Science</label>
+              </div>
+            </div>
+            <div class="right">
+              <div class="item">
+                <input type="checkbox">
+                <label>Computer</label> 
+              </div>
+              <div class="item">
+                <input type="checkbox">
+                <label>Mathematics</label>
+              </div>
+              <div class="item">
+                <input type="checkbox">
+                <label>Non-Fiction</label>
+              </div>
+              <div class="item">
+                <input type="checkbox">
+                <label>Education</label> 
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="ratings">
+          <h3>Ratings</h3>
+          <div class="stars">
+            <img src="resource/star-fill.svg" alt="star-icon">
+            <img src="resource/star-fill.svg" alt="star-icon">
+            <img src="resource/star-fill.svg" alt="star-icon">
+            <img src="resource/star-fill.svg" alt="star-icon">
+            <img src="resource/star-outline.svg" alt="star-icon">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button id="menu">
+      <img src="resource/menu-svgrepo-com.svg" alt="menu icon">
+    </button>
+
+    <div class="menu" id="menu-box">
+      <div class="label">
+        <h3>Menu</h3>
+      </div>
+      <div class="item one">
+        <img src="resource/question-mark-round-svgrepo-com.svg" alt="question mark">
+        <h3>How to Use?</h3>
+      </div>
+      <div class="item">
+        <div class="bg profile">
+          <img src="resource/profile-about-mobile-ui-svgrepo-com.svg" alt="profile icon">
+        </div>
+        <h3>Creator</h3>
+      </div>
+      <div class="item">
+        <div class="bg phone">
+          <img src="resource/telephone-fill-svgrepo-com.svg" alt="telephone icon">
+        </div>
+        <h3>Contact Us</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="separator" id="separator">
+    <div class="item active">
+      <h3>FICTION</h3>
+    </div>
+    <div class="item">
+      <h3>NON - FICTION</h3>
+    </div>
+    <div class="item">
+      <h3>SCIENCE</h3>
+    </div>
+    <div class="item">
+      <h3>HISTORY</h3>
+    </div>
+    <div class="item">
+      <h3>BIOGRAPHY</h3>
+    </div>
+    <div class="item">
+      <h3>COMPUTER</h3>
+    </div>
+    <div class="item">
+      <h3>MATHEMATICS</h3>
+    </div>
+    <div class="item" id="other">
+      <h3>OTHER</h3>
+    </div>
+
+    <div class="other" id="other-box">
+      <div class="head">
+        <h3>Other Genres</h3>
+      </div>
+      <div class="line"><h3>Education</h3></div>
+      <div class="line"><h3>Literature</h3></div>
+      <div class="line"><h3>Thesis</h3></div>
+      <div class="line"><h3>Dictionaries</h3></div>
+    </div>
+  </div>
+
+  <div class="main" id="main">
+
+    <div class="left-section">
+      <div class="item">
+        <div class="sort">
+          <img src="resource/sort-alpha-asc-svgrepo-com.svg" alt="sort icon">
+        </div>
+        <h3>Sort</h3>
+      </div>
+      <div class="item" id="view-mark-button">
+        <div class="bookmark">
+          <img src="resource/bookmark-svgrepo-com(violet).svg" alt="bookmark icon">
+        </div>
+        <h3>View Marked</h3>
+      </div>
+
+      <div class="view-marked" id="view-marked-box">
+        <div class="genre">
+          <h3>Genre</h3>
+        </div>
+        <div class="list">
+          <ul>
+            <li>Sample 1</li>
+            <li>Sample 2</li>
+            <li>Sample 3</li>
+          </ul>
+        </div>  
+      </div>
+    </div>
+
+    <div class="right-section">
+      <div class="item">
+        <div class="book-cover">
+          <img src="resource/sample-pic.jpg" alt="" class="books">
+        </div>
+        <div class="book-info">
+          <h3> Sample Title </h3>
+          <span> by Sample Author</span>
+        </div>
+        <div class="bg-palette">
+          
+        </div>
+        <div class="bookmark-icon">
+          <img src="resource/bookmark-svgrepo-com(outline).svg" alt="bookmark icon">
+        </div>
+      </div>
+      <div class="item">
+        <div class="book-cover">
+          <img src="resource/sample-pic.jpg" alt="" class="books">
+        </div>
+        <div class="book-info">
+          <h3> Sample Title </h3>
+          <span> by Sample Author</span>
+        </div>
+        <div class="bg-palette">
+          
+        </div>
+        <div class="bookmark-icon">
+          <img src="resource/bookmark-svgrepo-com(outline).svg" alt="bookmark icon">
+        </div>
+      </div>
+      <div class="item">
+        <div class="book-cover">
+          <img src="resource/sample-pic.jpg" alt="" class="books">
+        </div>
+        <div class="book-info">
+          <h3> Sample Title </h3>
+          <span> by Sample Author </span>
+        </div>
+        <div class="bg-palette">
+          
+        </div>
+        <div class="bookmark-icon">
+          <img src="resource/bookmark-svgrepo-com(full).svg" alt="bookmark icon">
+        </div>
+      </div>
+      <div class="item">
+        <div class="book-cover">
+          <img src="resource/sample-pic.jpg" alt="" class="books">
+        </div>
+        <div class="book-info">
+          <h3> Sample Title </h3>
+          <span> by Sample Author </span>
+        </div>
+        <div class="bg-palette">
+          
+        </div>
+        <div class="bookmark-icon">
+          <img src="resource/bookmark-svgrepo-com(full).svg" alt="bookmark icon">
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="book-cover">
+          <img src="resource/sample-pic.jpg" alt="" class="books">
+        </div>
+        <div class="book-info">
+          <h3> Sample Title </h3>
+          <span> by Sample Author</span>
+        </div>
+        <div class="bg-palette">
+          
+        </div>
+        <div class="bookmark-icon">
+          <img src="resource/bookmark-svgrepo-com(outline).svg" alt="bookmark icon">
+        </div>
+      </div>
+      <div class="item">
+        <div class="book-cover">
+          <img src="resource/sample-pic.jpg" alt="" class="books">
+        </div>
+        <div class="book-info">
+          <h3> Sample Title </h3>
+          <span> by Sample Author</span>
+        </div>
+        <div class="bg-palette">
+          
+        </div>
+        <div class="bookmark-icon">
+          <img src="resource/bookmark-svgrepo-com(outline).svg" alt="bookmark icon">
+        </div>
+      </div>
+      <div class="item">
+        <div class="book-cover">
+          <img src="resource/sample-pic.jpg" alt="" class="books">
+        </div>
+        <div class="book-info">
+          <h3> Sample Title </h3>
+          <span> by Sample Author</span>
+        </div>
+        <div class="bg-palette">
+          
+        </div>
+        <div class="bookmark-icon">
+          <img src="resource/bookmark-svgrepo-com(outline).svg" alt="bookmark icon">
+        </div>
+      </div>
+      <div class="item">
+        <div class="book-cover">
+          <img src="resource/sample-pic.jpg" alt="" class="books">
+        </div>
+        <div class="book-info">
+          <h3> Sample Title </h3>
+          <span> by Sample Author</span>
+        </div>
+        <div class="bg-palette">
+          
+        </div>
+        <div class="bookmark-icon">
+          <img src="resource/bookmark-svgrepo-com(outline).svg" alt="bookmark icon">
+        </div>
+      </div>
+
+      <div class="item">
+        <div class="book-cover">
+          <img src="resource/sample-pic.jpg" alt="" class="books">
+        </div>
+        <div class="book-info">
+          <h3> Sample Title </h3>
+          <span> by Sample Author</span>
+        </div>
+        <div class="bg-palette">
+          
+        </div>
+        <div class="bookmark-icon">
+          <img src="resource/bookmark-svgrepo-com(outline).svg" alt="bookmark icon">
+        </div>
+      </div>
+      <div class="item">
+        <div class="book-cover">
+          <img src="resource/sample-pic.jpg" alt="" class="books">
+        </div>
+        <div class="book-info">
+          <h3> Sample Title </h3>
+          <span> by Sample Author</span>
+        </div>
+        <div class="bg-palette">
+          
+        </div>
+        <div class="bookmark-icon">
+          <img src="resource/bookmark-svgrepo-com(outline).svg" alt="bookmark icon">
+        </div>
+      </div>
+      <div class="item">
+        <div class="book-cover">
+          <img src="resource/sample-pic.jpg" alt="" class="books">
+        </div>
+        <div class="book-info">
+          <h3> Sample Title </h3>
+          <span> by Sample Author</span>
+        </div>
+        <div class="bg-palette">
+          
+        </div>
+        <div class="bookmark-icon">
+          <img src="resource/bookmark-svgrepo-com(outline).svg" alt="bookmark icon">
+        </div>
+      </div>
+      <div class="item">
+        <div class="book-cover">
+          <img src="resource/sample-pic.jpg" alt="" class="books">
+        </div>
+        <div class="book-info">
+          <h3> Sample Title </h3>
+          <span> by Sample Author</span>
+        </div>
+        <div class="bg-palette">
+          
+        </div>
+        <div class="bookmark-icon">
+          <img src="resource/bookmark-svgrepo-com(outline).svg" alt="bookmark icon">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="information" id="information">
+
+    <div class="back" id="back-button">
+      <div class="back-icon">
+        <img src="resource/less-than-svgrepo-com.svg" alt="">
+      </div>
+      <h3>BACK</h3>
+    </div>
+
+    <div class="left-section">
+
+      <div class="focused-book">
+        <div class="book-container">
+          <img src="resource/sample-pic.jpg" alt="">
+        </div>  
+      </div>
+      
+      <div class="focused-book-info">
+
+        <div class="title-author-ratings">
+          <h2><span>TITLE, AUTHOR, & RATINGS</span></h2>
+          <div class="content">
+            <h3>The Light Beyond The Garden Wall</h3>
+            <span> by <i>Scott Whitehead</i></span>
+            <div class="ratings">
+              <img src="resource/star-fill.svg" alt="star-icon">
+              <img src="resource/star-fill.svg" alt="star-icon">
+              <img src="resource/star-fill.svg" alt="star-icon">
+              <img src="resource/star-fill.svg" alt="star-icon">
+              <img src="resource/star-outline.svg" alt="star-icon">
+            </div>
+          </div>
+        </div>
+
+        <div class="synopsis">
+          <h2><span>SYNOPSIS</span></h2>
+          <div class="content">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div>
+        </div>
+
+        <div class="characters-and-contributors">
+          <h2><span>CHARACTERS / CONTRIBUTORS</span></h2>
+          <div class="content characters">
+            <ul>
+              <li>Isaiah</li>
+              <li>King of Judah</li>
+              <li>Ruth</li>
+            </ul>
+            <ul>
+              <li>Isaiah</li>
+              <li>King of Judah</li>
+              <li>Ruth</li>
+            </ul>
+          </div>
+        </div>
+        <div class="source">
+          <h3>SOURCE : <span><i>Open Library API</i></span></h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="right-section">
+
+      <div class="upper">
+
+        <div class="item">
+          <div class="bookmark">
+            <img src="resource/bookmark-svgrepo-com(violet).svg" alt="">
+          </div>
+          <h3>Unsave</h3>
+        </div>
+
+        <div class="item">
+          <div class="download">
+            <img src="resource/download-svgrepo-com.svg" alt="">
+          </div>
+          <h3>Download Book</h3>
+        </div>
+
+      </div>
+
+      <div class="lower">
+        <h3>More Like This</h3>
+        <div class="book-suggestions">
+
+          <div class="item">
+            <div class="book-cover"><img src="resource/sample-pic1.jpg" alt=""></div>
+            <div class="book-info">
+              <h3>really good, actually</h3>
+              <span>by Monica Heisey</span>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="book-cover"><img src="resource/sample-pic2.png" alt=""></div>
+            <div class="book-info">
+              <h3>Don't Look Back</h3>
+              <span>by Isaac Nelson</span>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="book-cover"><img src="resource/sample-pic3.jpg" alt=""></div>
+            <div class="book-info">
+              <h3>Harry Potter</h3>
+              <span>by J.K. Rowling</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
