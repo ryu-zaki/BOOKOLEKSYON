@@ -440,6 +440,7 @@ body {
 .separator{
     display: flex;
     justify-content: space-around;
+    align-items: center;
     padding: 20px 30px;
 
     position: relative;
@@ -447,9 +448,9 @@ body {
 
 .separator .item{
     display: flex;
-
-    padding: 20px 40px;
-    border-radius: 20px;
+    align-items: center;
+    padding: 15px 30px;
+    border-radius: 15px;
     transition: all 0.3s ease;
 
 
@@ -459,12 +460,9 @@ body {
 .separator .item h3{
     font-family: var(--font-var-12);
     font-weight: 500;
-    font-size: 1rem;
-}
-
-.separator .item:nth-child(2),
-.separator .item:nth-child(7){
-    padding: 20px 50px;
+    font-size: .85rem;
+    border-bottom: 3px solid transparent;
+    padding-bottom: .3em;
 }
 
 .separator .item:hover {
@@ -472,10 +470,20 @@ body {
     background-color: var(--panels);
 }
 
+.separator .item:not(.active):hover h3 {
+    border-color: var(--light-purple);
+}
+
+.separator .item.active {
+    background-color: var(--dark-purple);
+    color: var(--background);
+}
+
 .separator .item.active h3{
-    transform: scale(1.4); 
+    /* transform: scale(1.2);  */
     font-weight: 600;
-    text-decoration: underline var(--light-purple) 4px;
+    /* text-decoration: underline var(--light-purple) 4px; */
+    padding-bottom: 0;
     transition: all 0.3s ease;
 }
 
@@ -679,7 +687,7 @@ body {
     padding: 13px;
     margin-left: 16px;
 
-    border-radius: 20px;
+    border-radius: 10px;
     background-color: var(--panels);
 }
 
@@ -701,13 +709,13 @@ body {
 /* BOOK COVER */
 .main .right-section .item .book-cover{
     display: flex;
-    padding-left: 25px;
+    margin-inline: auto;
 }
 
 .main .right-section .item .book-cover img{
     width: 150px;
     height: 240px;
-    border-radius: 25px;
+    border-radius: 15px;
     border: 1px solid var(--book-cover);
 }
 
@@ -717,7 +725,7 @@ body {
     height: 230px;
     right: 0px;
     top: 110px;
-    border-radius: 30px;
+    border-radius: 20px;
     background-color: var(--book-cover);
     z-index: -50;
 }
@@ -725,16 +733,16 @@ body {
 /* BOOKMARK ICON */
 .main .right-section .item .bookmark-icon{
     display: flex;
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     position: absolute;
 
-    right: 12px;
+    right: -.5em;
 }
 
 .main .right-section .item .bookmark-icon img {
-    width: 70px;
-    height: 70px;
+    width: 100%;
+    height: 100%;
 }
 
 .main .right-section .item .book-cover:hover,
