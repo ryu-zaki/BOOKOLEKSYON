@@ -19,7 +19,7 @@ const viewMarkBtn = document.getElementById('view-mark-button');
 const viewMark = document.getElementById('view-marked-box')
 let viewMarkBtnisOpen = false;
 
-const books = document.getElementsByClassName('books');
+const books = document.getElementsByClassName('book-cover');
 const mainSection = document.getElementById('main');
 const separator = document.getElementById('separator');
 const information = document.getElementById('information');
@@ -122,3 +122,78 @@ backBtn.addEventListener('click',  () => {
     
     bookisClick = !bookisClick;
 })
+
+
+//this shows the data of the books based on API?
+const booksData = [
+    { title: "Sample Title 1", author: "Sample Author 1", imgSrc: "resource/sample-pic.jpg" },
+    { title: "Sample Title 3", author: "Sample Author 3", imgSrc: "resource/sample-pic.jpg" },
+    { title: "Sample Title 3", author: "Sample Author 3", imgSrc: "resource/sample-pic.jpg" },
+    { title: "Sample Title 3", author: "Sample Author 3", imgSrc: "resource/sample-pic.jpg" },
+    { title: "Sample Title 3", author: "Sample Author 3", imgSrc: "resource/sample-pic.jpg" },
+    { title: "Sample Title 3", author: "Sample Author 3", imgSrc: "resource/sample-pic.jpg" },
+    { title: "Sample Title 3", author: "Sample Author 3", imgSrc: "resource/sample-pic.jpg" },
+    { title: "Sample Title 3", author: "Sample Author 3", imgSrc: "resource/sample-pic.jpg" },
+    { title: "Sample Title 3", author: "Sample Author 3", imgSrc: "resource/sample-pic.jpg" },
+    { title: "Sample Title 3", author: "Sample Author 3", imgSrc: "resource/sample-pic.jpg" },
+    { title: "Sample Title 3", author: "Sample Author 3", imgSrc: "resource/sample-pic.jpg" },
+    { title: "Sample Title 3", author: "Sample Author 3", imgSrc: "resource/sample-pic.jpg" },
+  ];
+
+// displays books in an ID of books-container
+const displayBooks = () => {
+    const container = document.getElementById("books-container");
+  
+    booksData.forEach(book => {
+      const itemDiv = document.createElement("div");
+      itemDiv.classList.add("item");
+  
+      itemDiv.innerHTML = `
+        <div class="book-cover">
+          <img src="${book.imgSrc}" alt="Book Cover" class="books">
+        </div>
+        <div class="book-info">
+          <h3>${book.title}</h3>
+          <span>by ${book.author}</span>
+        </div>
+        <div class="bg-palette""></div>
+        <div class="bookmark-icon">
+          <img src="resource/bookmark-svgrepo-com(outline).svg" class="bookmark" alt="Bookmark Icon">
+        </div>
+      `;
+  
+      container.appendChild(itemDiv);
+    });
+  }
+
+  displayBooks();
+
+// add event listener for each bookmark icon
+document.querySelectorAll('.bookmark').forEach(bookmark => {
+    bookmark.addEventListener("click", () => {
+        if (bookmark.src.endsWith('resource/bookmark-svgrepo-com(outline).svg')) {
+            bookmark.src = 'resource/bookmark-svgrepo-com(full).svg';
+        } else {
+            bookmark.src = 'resource/bookmark-svgrepo-com(outline).svg';
+        }
+    });
+});
+
+// add event listener for each bookmark icon
+document.querySelectorAll('.item').forEach(Item => {
+    Item.addEventListener('click', () => 
+        {
+            if(!bookisClick){
+                mainSection.style.display='none';
+                separator.style.display='none';
+                information.style.display='flex';
+            }else{
+                mainSection.style.display='flex';
+                separator.style.display='flex';
+            }
+    
+            bookisClick = !bookisClick;
+        });
+});
+
+
