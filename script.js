@@ -180,8 +180,8 @@ document.querySelectorAll('.bookmark').forEach(bookmark => {
 });
 
 // add event listener for each bookmark icon
-document.querySelectorAll('.item').forEach(Item => {
-    Item.addEventListener('click', () => 
+document.querySelectorAll('.books').forEach(book => {
+    book.addEventListener('click', () => 
         {
             if(!bookisClick){
                 mainSection.style.display='none';
