@@ -440,6 +440,8 @@ body {
 .separator{
     display: flex;
     justify-content: space-around;
+ 
+    align-items: center;
     padding: 20px 30px;
 
     position: relative;
@@ -447,35 +449,45 @@ body {
 
 .separator .item{
     display: flex;
-
-    padding: 20px 40px;
-    border-radius: 20px;
+    align-items: center;
+    padding: 15px 30px;
+    border-radius: 15px;
     transition: all 0.3s ease;
 
-
     color: var(--black-text);
+    align-items: center;
+    transition: all 0.3s ease;
 }
 
 .separator .item h3{
     font-family: var(--font-var-12);
     font-weight: 500;
-    font-size: 1rem;
+    font-size: .85rem;
+    border-bottom: 3px solid transparent;
+    padding-bottom: .3em;
+    transition: all 0.3s ease;
 }
-
-.separator .item:nth-child(2),
-.separator .item:nth-child(7){
-    padding: 20px 50px;
-}
-
 .separator .item:hover {
     cursor: pointer;
     background-color: var(--panels);
+    transition: all 0.3s ease;
+}
+
+.separator .item:not(.active):hover h3 {
+    border-color: var(--light-purple);
+}
+
+.separator .item.active {
+    background-color: var(--dark-purple);
+    color: var(--background);
 }
 
 .separator .item.active h3{
-    transform: scale(1.4); 
+    /* transform: scale(1.2);  */
+   
     font-weight: 600;
-    text-decoration: underline var(--light-purple) 4px;
+    /* text-decoration: underline var(--light-purple) 4px; */
+    padding-bottom: 0;
     transition: all 0.3s ease;
 }
 
@@ -545,7 +557,7 @@ body {
     flex-direction: column;
     flex: 1;
     align-items: start;
-    
+
     padding: 30px 0 10px;
     border-top-left-radius: 20px;
     border: 2px solid var(--panel-border);
@@ -638,21 +650,26 @@ body {
 
 /* RIGHT SECTION */
 
+#books-container {
+    flex: 6;
+    background-color: var(--panels);
+    width: 100%;
+    border-top-right-radius: 10px;
+    border: 2px solid var(--panel-border);
+    padding: 40px;
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content:space-around;
+}
+
 .main .right-section{
     flex: 6;
     background-color: var(--panels);
-
-    border-top-right-radius: 10px;
-    border: 2px solid var(--panel-border);
-    padding: 50px;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 50px;
-    
     z-index: 100;
     overflow: hidden;
     overflow-y: scroll;
+    justify-content: space-between;
 }
 
 /* TITLE AND AUTHOR */
@@ -660,12 +677,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: start;
-    gap: 10px;
+    gap: 20px;
     padding: 0 16px;
-
-    width: 100%;
     height: 100%;
-
     position: relative;
 }
 
@@ -678,8 +692,8 @@ body {
     width: 92%;
     padding: 13px;
     margin-left: 16px;
-
-    border-radius: 20px;
+    z-index: 3;
+    border-radius: 10px;
     background-color: var(--panels);
 }
 
@@ -689,6 +703,7 @@ body {
     font-size: .9rem;
     letter-spacing: .05rem;
     color: var(--black-text);
+    z-index: 2;
 }
 
 .main .right-section .item .book-info span{
@@ -696,19 +711,23 @@ body {
     font-weight: 500;
     font-size: .68rem;
     color: var(--black-text);
+    z-index: 1;
 }
 
 /* BOOK COVER */
 .main .right-section .item .book-cover{
     display: flex;
-    padding-left: 25px;
+    margin-inline: auto;
 }
 
 .main .right-section .item .book-cover img{
-    width: 150px;
-    height: 240px;
-    border-radius: 25px;
+    max-height: 240px;
+    max-width: 150px;
+    border-radius: 15px;
     border: 1px solid var(--book-cover);
+    z-index: 4;
+    position: relative;
+    left: 5px;
 }
 
 .main .right-section .bg-palette{
@@ -717,24 +736,23 @@ body {
     height: 230px;
     right: 0px;
     top: 110px;
-    border-radius: 30px;
+    border-radius: 20px;
     background-color: var(--book-cover);
-    z-index: -50;
 }
 
 /* BOOKMARK ICON */
 .main .right-section .item .bookmark-icon{
     display: flex;
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     position: absolute;
-
-    right: 12px;
+    z-index: 7;
+    right: -.5em;
 }
 
 .main .right-section .item .bookmark-icon img {
-    width: 70px;
-    height: 70px;
+    width: 100%;
+    height: 100%;
 }
 
 .main .right-section .item .book-cover:hover,
@@ -767,13 +785,12 @@ body {
 .information {
     display: none;
     flex-direction: row;
-
     width: calc(100% - 60px);
-    height: calc(100svh - 100px);
+    height: calc(100svh + 200px);
     margin: auto;
     padding: 43px 10px;
-
     position: relative;
+    overflow-y: auto
 }
 
 /* BACK BUTTON */
@@ -868,6 +885,9 @@ body {
     flex: 9;   
 
     padding: 0 40px;
+
+    overflow: auto;
+    overflow-y: scroll;
 }
 
 /* LABELS */
