@@ -747,7 +747,7 @@ body {
     height: 35px;
     position: absolute;
     z-index: 7;
-    right: -.5em;
+    right: -2em;
 }
 
 .main .right-section .item .bookmark-icon img {
