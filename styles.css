@@ -36,7 +36,7 @@
     --font-var-11: "Sofia", cursive;
     --font-var-12: "Raleway", sans-serif;
     --font-var-13: "Roboto", sans-serif;
-    --font-var-14:
+    --font-var-14: "Montserrat", sans-serif
 }
 
 *{
@@ -678,7 +678,7 @@ body {
     flex-direction: column;
     align-items: start;
     gap: 20px;
-    padding: 0 16px;
+    padding: 20px 16px;
     height: 100%;
     position: relative;
 }
@@ -686,19 +686,19 @@ body {
 .main .right-section .item .book-info {
     display: flex;
     flex-direction: column;
-    align-items: start;
-    gap: 10px;
-
-    width: 92%;
+    align-items: flex-start;
+    width: 100%;
     padding: 13px;
-    margin-left: 16px;
     z-index: 3;
+    position: relative;
+    left: 4px;
     border-radius: 10px;
     background-color: var(--panels);
+    gap: 5px;
 }
 
 .main .right-section .item .book-info h3{
-    font-family: var(--font-var-12);
+    font-family: var(--font-var-14);
     font-weight: 700;
     font-size: .9rem;
     letter-spacing: .05rem;
@@ -707,10 +707,10 @@ body {
 }
 
 .main .right-section .item .book-info span{
-    font-family: var(--font-var-12);
+    font-family: var(--font-var-14);
     font-weight: 500;
     font-size: .68rem;
-    color: var(--black-text);
+    color: gray;
     z-index: 1;
 }
 
