@@ -23,19 +23,26 @@ const booksCategory = bookCategoryFilter("history");
 
 
 // displays books in an ID of books-container
-const displayBooks = (books) => {
+const displayBooks = (books, allBookmarks) => {
   const container = document.getElementById("books-container");
   
   container.innerHTML = "";
 
-  books.forEach(book => {
+
+  for (let i = 0; i < books.length; i++) {
+
     const itemDiv = document.createElement("div");
     itemDiv.classList.add("item");
     
-    itemDiv.innerHTML = generateProductCatalog(book);
+    const isBookMarked = allBookmarks.some(data => {
+      return data.title === books[i].title
+    });
+
+    itemDiv.innerHTML = generateProductCatalog({...books[i], isBookMarked});
 
     container.appendChild(itemDiv);
-  });
+
+  }
 }
 
 const appendBookInfo = (container, info) => {
@@ -63,7 +70,7 @@ const activateInfoEventListeners = () => {
 }
 
 
-const generateProductCatalog = ({title, genre, author}) => {
+const generateProductCatalog = ({title, genre, author, isBookMarked}) => {
   
   return (
     `
@@ -76,7 +83,7 @@ const generateProductCatalog = ({title, genre, author}) => {
       </div>
       <div class="bg-palette""></div>
       <div class="bookmark-icon">
-        <img src="resource/bookmark-svgrepo-com(outline).svg" class="bookmark" alt="Bookmark Icon">
+        <img id="${title}" src="resource/${isBookMarked ? "bookmark-svgrepo-com(full).svg" : "bookmark-svgrepo-com(outline).svg"}" class="bookmark" alt="Bookmark Icon">
       </div>
     `
   )

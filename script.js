@@ -113,24 +113,13 @@ for(let i = 0; i < books.length; i++){
     })
 }
 
+const storedBookmarks = localStorage.getItem("bookmarks");
+    
+let allBookmarks = !!storedBookmarks ? JSON.parse(storedBookmarks) : [];
 
+//methods for all affected events because in switching to different genre
 //displays the book Catalogs
-displayBooks(booksCategory);
-
-// add event listener for each bookmark icon
-document.querySelectorAll('.bookmark').forEach(bookmark => {
-    bookmark.addEventListener("click", () => {
-        if (bookmark.src.endsWith('resource/bookmark-svgrepo-com(outline).svg')) {
-            bookmark.src = 'resource/bookmark-svgrepo-com(full).svg';
-        } else {
-            bookmark.src = 'resource/bookmark-svgrepo-com(outline).svg';
-        }
-    });
-});
-
-// add event listener for each bookmark icon
-
-
+displayBooks(booksCategory, allBookmarks);
 const activateBookCatalogEvents = () => {
     document.querySelectorAll('.books').forEach(book => {
         book.addEventListener('click', ({target}) => 
@@ -151,10 +140,39 @@ const activateBookCatalogEvents = () => {
 
                       }, 1000)
                       
-                    
-    
-                
             });
+    });
+
+
+    // add event listener for each bookmark icon
+    document.querySelectorAll('.bookmark').forEach(bookmark => {
+        bookmark.addEventListener("click", ({target}) => {
+
+            const book = AllBooks.find((b, index) => {
+                return b.title === target.id
+            });
+            
+           
+
+            if (bookmark.src.endsWith('resource/bookmark-svgrepo-com(outline).svg')) {
+                bookmark.src = 'resource/bookmark-svgrepo-com(full).svg';
+                allBookmarks.push(book);
+            } else {
+                bookmark.src = 'resource/bookmark-svgrepo-com(outline).svg';
+                
+                const newBookmarks = allBookmarks.filter(data => {
+                    return data.title !== target.id
+                });
+
+                allBookmarks = [...newBookmarks]
+                
+            }
+
+            localStorage.setItem("bookmarks", JSON.stringify(allBookmarks));
+
+            console.log(JSON.parse(localStorage.getItem('bookmarks')));
+            
+        });
     });
 }
 
@@ -167,7 +185,7 @@ allNavs.forEach(nav => {
 
         const collection = bookCategoryFilter(target.innerText.toLowerCase());
 
-        displayBooks(collection);
+        displayBooks(collection, allBookmarks);
         activateBookCatalogEvents();
     })
 })

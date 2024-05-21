@@ -558,6 +558,7 @@ const AllBooks = [
       {
         "title": "Steve Jobs",
         "author": "Walter Isaacson",
+        "pdf": "https://elib.buxdupi.uz/books/isaacson2011stevejobs.pdf",
         "ratings": 4.1,
         "synopsis": "This biography of Steve Jobs offers an intimate portrait of the complex and enigmatic visionary who revolutionized several industries.",
         "number_of_pages": 656,
@@ -566,6 +567,7 @@ const AllBooks = [
       },
       {
         "title": "The Diary of a Young Girl",
+        "pdf": "https://cbseacademic.nic.in/web_material/doc/novels/3_The%20Diary%20of%20a%20Young%20Girl.pdf",
         "author": "Anne Frank",
         "ratings": 4.6,
         "synopsis": "The diary of Anne Frank is a powerful and moving account of a young girl's experiences during the Holocaust.",
@@ -574,8 +576,9 @@ const AllBooks = [
         "genre": "Biography"
       },
       {
-        "title": "Unbroken: A World War II Story of Survival, Resilience, and Redemption",
+        "title": "Unbroken",
         "author": "Laura Hillenbrand",
+        "pdf": "https://www.coppinacademy.org/ourpages/auto/2017/8/31/41911726/laura_hillenbrand_-_unbroken_book.pdf",
         "ratings": 4.4,
         "synopsis": "This biography tells the incredible true story of Louis Zamperini, an Olympic athlete turned WWII bombardier who survived a plane crash and endured years of captivity in Japanese POW camps.",
         "number_of_pages": 528,
@@ -585,6 +588,7 @@ const AllBooks = [
       {
         "title": "The Immortal Life of Henrietta Lacks",
         "author": "Rebecca Skloot",
+        "pdf": "https://ia803009.us.archive.org/15/items/HELAFullText/HELA%20Full%20Text.pdf",
         "ratings": 4.1,
         "synopsis": "This book chronicles the life of Henrietta Lacks, an African American woman whose cells were harvested without her consent, leading to groundbreaking medical discoveries.",
         "number_of_pages": 381,
@@ -594,6 +598,7 @@ const AllBooks = [
       {
         "title": "Long Walk to Freedom",
         "author": "Nelson Mandela",
+        "pdf": "https://zelalemkibret.wordpress.com/wp-content/uploads/2012/01/the-autobiography-of-nelson-mandela.pdf",
         "ratings": 4.7,
         "synopsis": "Nelson Mandela's autobiography offers a detailed account of his life, from his childhood in a rural village to his leadership role in the struggle against apartheid and his presidency of South Africa.",
         "number_of_pages": 656,
@@ -602,6 +607,7 @@ const AllBooks = [
       },
       {
         "title": "Alexander Hamilton",
+        "pdf": "https://archive.org/details/alexanderhamilto0000cher/page/n7/mode/2up",
         "author": "Ron Chernow",
         "ratings": 4.7,
         "synopsis": "This biography of Alexander Hamilton explores the life of one of America's founding fathers, from his rise to prominence as a statesman to his tragic death in a duel with Aaron Burr.",
@@ -612,6 +618,7 @@ const AllBooks = [
       {
         "title": "Leonardo da Vinci",
         "author": "Walter Isaacson",
+        "pdf": "https://www.fatsnake.com/PDF/LeonardodaVinci.pdf",
         "ratings": 4.2,
         "synopsis": "Walter Isaacson delves into the life of Leonardo da Vinci, exploring the mind of the Renaissance genius and his contributions to art, science, and humanity.",
         "number_of_pages": 624,
@@ -619,8 +626,8 @@ const AllBooks = [
         "genre": "Biography"
       },
       {
-        "title": "Malcolm X: A Life of Reinvention",
-        "author": "Manning Marable",
+        "title": "Malcolm X",
+        "pdf": "https://antilogicalism.com/wp-content/uploads/2018/04/malcom-x.pdf",
         "ratings": 4.6,
         "synopsis": "Manning Marable offers a comprehensive and provocative biography of Malcolm X, shedding new light on the complexities of his life and legacy.",
         "number_of_pages": 608,
@@ -630,6 +637,7 @@ const AllBooks = [
       {
         "title": "The Autobiography of Benjamin Franklin",
         "author": "Benjamin Franklin",
+        "pdf": "https://www.arvindguptatoys.com/arvindgupta/e-ben-franklin.pdf",
         "ratings": 4.1,
         "synopsis": "Benjamin Franklin's autobiography provides insight into the life of one of America's founding fathers, from his humble beginnings to his achievements as a statesman, inventor, and philosopher.",
         "number_of_pages": 320,
@@ -639,6 +647,7 @@ const AllBooks = [
       {
         "title": "Becoming",
         "author": "Michelle Obama",
+        "pdf": "https://static.fnac-static.com/multimedia/PT/pdf/9780241982976.pdf",
         "ratings": 4.8,
         "synopsis": "Michelle Obama's memoir offers a deeply personal account of her life, from her childhood on the South Side of Chicago to her years in the White House as First Lady.",
         "number_of_pages": 426,
@@ -649,6 +658,7 @@ const AllBooks = [
         "title": "The Wright Brothers",
         "author": "David McCullough",
         "ratings": 4.5,
+        "pdf": "https://ia801005.us.archive.org/31/items/wrightbrothersbi00kell_1/wrightbrothersbi00kell_1.pdf",
         "synopsis": "David McCullough tells the captivating story of the Wright brothers, pioneers of aviation who overcame countless obstacles to achieve their dream of powered flight.",
         "number_of_pages": 336,
         "characters": ["Orville Wright", "Wilbur Wright"],
@@ -657,6 +667,7 @@ const AllBooks = [
       {
         "title": "John Adams",
         "author": "David McCullough",
+        "pdf": "https://oll-resources.s3.us-east-2.amazonaws.com/oll3/store/titles/592/0077_LFeBk.pdf",
         "ratings": 4.5,
         "synopsis": "David McCullough paints a vivid portrait of John Adams, America's second president, exploring his pivotal role in the founding of the United States and his enduring friendship with Thomas Jefferson.",
         "number_of_pages": 752,
