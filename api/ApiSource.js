@@ -491,7 +491,7 @@ const AllBooks = [
         "genre": "History"
       },
       {
-        "title": "1491  ",
+        "title": "1491",
         "pdf": "https://ia802800.us.archive.org/32/items/1491.newrevelationsoftheamericasbeforecolumbusbycharlesc.mann/1491.%20New%20revelations%20of%20the%20Americas%20before%20Columbus%20by%20Charles%20C.%20Mann.pdf",
         "author": "Charles C. Mann",
         "ratings": 4.1,

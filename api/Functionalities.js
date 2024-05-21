@@ -64,11 +64,11 @@ const activateInfoEventListeners = () => {
 
 
 const generateProductCatalog = ({title, genre, author}) => {
-
+  
   return (
     `
       <div class="book-cover">
-        <img id="${title}" src="./resource/book covers/${genre}/${title.toLowerCase()}.png" alt="Book Cover" class="books">
+        <img id="${title}" src="./resource/book covers/${genre.toLowerCase()}/${title.toLowerCase()}.png" alt="Book Cover" class="books">
       </div>
       <div class="book-info">
         <h3>${title}</h3> 
