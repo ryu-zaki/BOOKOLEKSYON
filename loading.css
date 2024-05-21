@@ -1,0 +1,31 @@
+.loading-animation {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0,0,0,0.7);
+    min-width: 100vh;
+    height: 100vh;
+    z-index: 9999;
+    color: #f5f5f5;
+
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1em;
+    align-items: center;
+    backdrop-filter: blur(.1em);
+}
+
+.loading-animation h2 {
+    animation: loadingSub .8s forwards;
+    transform: translateY(1em);
+    opacity: 0;
+}
+
+@keyframes loadingSub {
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    
+}

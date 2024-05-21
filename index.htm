@@ -8,8 +8,21 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="./loading.css" />
+  <script type="module" src="script.js" defer></script>
+  <script src="https://cdn.lordicon.com/lordicon.js" defer></script>
 </head>
 <body>
+  <div class="loading-animation">
+    <lord-icon
+       src="https://cdn.lordicon.com/lenjvibx.json"
+       trigger="loop"
+       state="loop-flutter"
+       colors="primary:#f5f5f5,secondary:#674188"
+       style="width:250px;height:250px">
+    </lord-icon>
+    <h2>Please wait...</h2>
+  </div>
   <div class="header">
     <div class="web-title">
       <div class="web-logo">
@@ -189,122 +202,6 @@
   </div>
 
   <div class="information" id="information">
-
-    <div class="back" id="back-button">
-      <div class="back-icon">
-        <img src="resource/less-than-svgrepo-com.svg" alt="">
-      </div>
-      <h3>BACK</h3>
-    </div>
-
-    <div class="left-section">
-
-      <div class="focused-book">
-        <div class="book-container">
-          <img src="resource/sample-pic.jpg" alt="">
-        </div>  
-      </div>
-      
-      <div class="focused-book-info">
-
-        <div class="title-author-ratings">
-          <h2><span>TITLE, AUTHOR, & RATINGS</span></h2>
-          <div class="content">
-            <h3>The Light Beyond The Garden Wall</h3>
-            <span> by <i>Scott Whitehead</i></span>
-            <div class="ratings">
-              <img src="resource/star-fill.svg" alt="star-icon">
-              <img src="resource/star-fill.svg" alt="star-icon">
-              <img src="resource/star-fill.svg" alt="star-icon">
-              <img src="resource/star-fill.svg" alt="star-icon">
-              <img src="resource/star-outline.svg" alt="star-icon">
-            </div>
-          </div>
-        </div>
-
-        <div class="synopsis">
-          <h2><span>SYNOPSIS</span></h2>
-          <div class="content">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-          </div>
-        </div>
-
-        <div class="characters-and-contributors">
-          <h2><span>CHARACTERS / CONTRIBUTORS</span></h2>
-          <div class="content characters">
-            <ul>
-              <li>Isaiah</li>
-              <li>King of Judah</li>
-              <li>Ruth</li>
-            </ul>
-            <ul>
-              <li>Isaiah</li>
-              <li>King of Judah</li>
-              <li>Ruth</li>
-            </ul>
-          </div>
-        </div>
-        <div class="source">
-          <h3>SOURCE : <span><i>Open Library API</i></span></h3>
-        </div>
-      </div>
-    </div>
-
-    <div class="right-section">
-
-      <div class="upper">
-
-        <div class="item">
-          <div class="bookmark">
-            <img src="resource/bookmark-svgrepo-com(violet).svg" alt="">
-          </div>
-          <h3>Unsave</h3>
-        </div>
-
-        <div class="item">
-          <div class="download">
-            <img src="resource/download-svgrepo-com.svg" alt="">
-          </div>
-          <h3>Download Book</h3>
-        </div>
-
-      </div>
-
-      <div class="lower">
-        <h3>More Like This</h3>
-        <div class="book-suggestions">
-
-          <div class="item">
-            <div class="book-cover"><img src="resource/sample-pic1.jpg" alt=""></div>
-            <div class="book-info">
-              <h3>really good, actually</h3>
-              <span>by Monica Heisey</span>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="book-cover"><img src="resource/sample-pic2.png" alt=""></div>
-            <div class="book-info">
-              <h3>Don't Look Back</h3>
-              <span>by Isaac Nelson</span>
-            </div>
-          </div>
-
-          <div class="item">
-            <div class="book-cover"><img src="resource/sample-pic3.jpg" alt=""></div>
-            <div class="book-info">
-              <h3>Harry Potter</h3>
-              <span>by J.K. Rowling</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
   </div>
-
-  <script src="script.js" defer></script>
 </body>
 </html>

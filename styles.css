@@ -709,6 +709,7 @@ body {
     padding: 20px 16px;
     height: 100%;
     position: relative;
+    width: 200px;
 }
 
 .main .right-section .item .book-info {
@@ -716,13 +717,14 @@ body {
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
-    padding: 13px;
+    padding: 5px;   
     z-index: 3;
     position: relative;
-    left: 4px;
+    left: 15px;
     border-radius: 10px;
     background-color: var(--panels);
     gap: 5px;
+    overflow-x: auto;
 }
 
 .main .right-section .item .book-info h3{
@@ -732,6 +734,7 @@ body {
     letter-spacing: .05rem;
     color: var(--black-text);
     z-index: 2;
+    max-width: 100%;
 }
 
 .main .right-section .item .book-info span{
@@ -743,26 +746,29 @@ body {
 }
 
 /* BOOK COVER */
-.main .right-section .item .book-cover{
+.main .right-section .item .book-cover {
     display: flex;
     margin-inline: auto;
 }
 
 .main .right-section .item .book-cover img{
-    max-height: 240px;
-    max-width: 150px;
+    height: 240px;
+    width: 150px;
     border-radius: 15px;
     border: 1px solid var(--book-cover);
     z-index: 4;
     position: relative;
     left: 5px;
+    background-image: url('./resource/img-unavailable.jpg');
+    background-size: cover;
+    background-position: center;
+    
 }
 
 .main .right-section .bg-palette{
     position: absolute;
-    width: 95%;
+    width: 100%;
     height: 230px;
-    right: 0px;
     top: 110px;
     border-radius: 20px;
     background-color: var(--book-cover);

@@ -1,5 +1,8 @@
-const menuItems = document.querySelectorAll('.separator .item');
+import { booksCategory, displayBooks, appendBookInfo, bookCategoryFilter } from "./api/Functionalities.js";
+import AllBooks from "./api/ApiSource.js";
 
+const menuItems = document.querySelectorAll('.separator .item');
+const loadingAnimation = document.querySelector(".loading-animation");
 const filterBtn = document.getElementById('filter');
 const filter = document.getElementById('filter-box');
 let filterBtnisOpen = false;
@@ -110,63 +113,9 @@ for(let i = 0; i < books.length; i++){
     })
 }
 
-backBtn.addEventListener('click',  () => {
-    if(!backBtnisClick){
-        mainSection.style.display='flex';
-        separator.style.display='flex';
-    }else{
-        mainSection.style.display='none';
-        separator.style.display='none';
-        information.style.display='flex';
-    }
-    
-    bookisClick = !bookisClick;
-})
 
-
-//this shows the data of the books based on API?
-const booksData = [
-    { title: "Sample Title 1", author: "Sample Author 1", imgSrc: "resource/sample-pic.jpg" },
-    { title: "Sample Title 3", author: "Sample Author 3", imgSrc: "resource/sample-pic.jpg" },
-    { title: "Sample Title 3", author: "Sample Author 3", imgSrc: "resource/sample-pic.jpg" },
-    { title: "Sample Title 3", author: "Sample Author 3", imgSrc: "resource/sample-pic.jpg" },
-    { title: "Sample Title 3", author: "Sample Author 3", imgSrc: "resource/sample-pic.jpg" },
-    { title: "Sample Title 3", author: "Sample Author 3", imgSrc: "resource/sample-pic.jpg" },
-    { title: "Sample Title 3", author: "Sample Author 3", imgSrc: "resource/sample-pic.jpg" },
-    { title: "Sample Title 3", author: "Sample Author 3", imgSrc: "resource/sample-pic.jpg" },
-    { title: "Sample Title 3", author: "Sample Author 3", imgSrc: "resource/sample-pic.jpg" },
-    { title: "Sample Title 3", author: "Sample Author 3", imgSrc: "resource/sample-pic.jpg" },
-    { title: "Sample Title 3", author: "Sample Author 3", imgSrc: "resource/sample-pic.jpg" },
-    { title: "Sample Title 3", author: "Sample Author 3", imgSrc: "resource/sample-pic.jpg" },
-  ];
-
-// displays books in an ID of books-container
-const displayBooks = () => {
-    const container = document.getElementById("books-container");
-  
-    booksData.forEach(book => {
-      const itemDiv = document.createElement("div");
-      itemDiv.classList.add("item");
-  
-      itemDiv.innerHTML = `
-        <div class="book-cover">
-          <img src="${book.imgSrc}" alt="Book Cover" class="books">
-        </div>
-        <div class="book-info">
-          <h3>${book.title}</h3>
-          <span>by ${book.author}</span>
-        </div>
-        <div class="bg-palette""></div>
-        <div class="bookmark-icon">
-          <img src="resource/bookmark-svgrepo-com(outline).svg" class="bookmark" alt="Bookmark Icon">
-        </div>
-      `;
-  
-      container.appendChild(itemDiv);
-    });
-  }
-
-  displayBooks();
+//displays the book Catalogs
+displayBooks(booksCategory);
 
 // add event listener for each bookmark icon
 document.querySelectorAll('.bookmark').forEach(bookmark => {
@@ -180,20 +129,45 @@ document.querySelectorAll('.bookmark').forEach(bookmark => {
 });
 
 // add event listener for each bookmark icon
-document.querySelectorAll('.books').forEach(book => {
-    book.addEventListener('click', () => 
-        {
-            if(!bookisClick){
-                mainSection.style.display='none';
-                separator.style.display='none';
-                information.style.display='flex';
-            }else{
-                mainSection.style.display='flex';
-                separator.style.display='flex';
-            }
+
+
+const activateBookCatalogEvents = () => {
+    document.querySelectorAll('.books').forEach(book => {
+        book.addEventListener('click', ({target}) => 
+            {
+                      loadingAnimation.style.display = "flex";
+                      const selectedBook = AllBooks.find(book => book.title === target.id);
+                    
+                      appendBookInfo(information, {...selectedBook})
     
-            bookisClick = !bookisClick;
-        });
-});
+                      
+                      setTimeout(() => {
+                        //visibility of information
+                        loadingAnimation.style.display = "none";
 
+                        information.style.display='flex';
+                        mainSection.style.display='none';
+                        separator.style.display='none';
 
+                      }, 1000)
+                      
+                    
+    
+                
+            });
+    });
+}
+
+activateBookCatalogEvents();
+
+const allNavs = document.querySelectorAll('.separator div > h3');
+
+allNavs.forEach(nav => {
+    nav.addEventListener('click', ({target}) => {
+
+        const collection = bookCategoryFilter(target.innerText.toLowerCase());
+
+        displayBooks(collection);
+        activateBookCatalogEvents();
+    })
+})
