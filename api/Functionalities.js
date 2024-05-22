@@ -126,7 +126,7 @@ const generateProductCatalog = ({title, genre, author, isBookMarked}) => {
   return (
     `
       <div class="book-cover">
-        <img id="${title}" src="./resource/book covers/${genre.toLowerCase()}/${title.toLowerCase()}.png" alt="Book Cover" class="books">
+        <img id="${title}" src="./resource/book covers/${genre.toLowerCase()}/${title.toLowerCase()}.png" class="books">
       </div>
       <div class="book-info">
         <h3>${title}</h3> 

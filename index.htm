@@ -1,92 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bookleksyon</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookleksyon</title>
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="responsive.css">
-  <link rel="stylesheet" href="./loading.css" />
-  <link rel="stylesheet" href="./presets_styles.css" />
-  <script type="module" src="script.js" defer></script>
-  <script src="https://cdn.lordicon.com/lordicon.js" defer></script>
-</head>
-<body>
-  <div class="loading-animation">
-    <div class="animation">
-      <lord-icon
-       src="https://cdn.lordicon.com/lenjvibx.json"
-       trigger="loop"
-       state="loop-flutter"
-       colors="primary:#f5f5f5,secondary:#674188"
-       style="width:250px;height:250px">
-    </lord-icon>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="responsive.css" />
+    <link rel="stylesheet" href="./loading.css" />
+    <link rel="stylesheet" href="./presets_styles.css" />
+    <script type="module" src="script.js" defer></script>
+    <script src="https://cdn.lordicon.com/lordicon.js" defer></script>
+  </head>
+  <body>
+    <div class="loading-animation">
+      <div class="animation">
+        <lord-icon
+          src="https://cdn.lordicon.com/lenjvibx.json"
+          trigger="loop"
+          state="loop-flutter"
+          colors="primary:#f5f5f5,secondary:#674188"
+          style="width: 250px; height: 250px"
+        >
+        </lord-icon>
+      </div>
+
+      <h2>Please wait...</h2>
     </div>
-    
-    <h2>Please wait...</h2>
-  </div>
 
-  <div class="header">
-    <div class="web-title">
-      <img src="resource/bookoleksyon.png" alt="Bookleksyon">
-    </div>
-    <div class="search">
-      <button id="search">
-        <img src="resource/search-svgrepo-com.svg" alt="search icon">
-      </button>
-      <input id="genre-search" type="text" placeholder="Search for titles, authors, or genres..." class="hide">
-      <button id="filter" class="hide">
-        <img src="resource/filter-svgrepo-com.svg" alt="filter icon">
-      </button>
+    <div class="header">
+      <div class="web-title">
+        <img src="resource/bookoleksyon.png" alt="Bookleksyon" />
+      </div>
+      <div class="search">
+        <button id="search">
+          <img src="resource/search-svgrepo-com.svg" alt="search icon" />
+        </button>
+        <input
+          id="genre-search"
+          type="text"
+          placeholder="Search for titles, authors, or genres..."
+          class="hide"
+        />
+        <button id="filter" class="hide">
+          <img src="resource/filter-svgrepo-com.svg" alt="filter icon" />
+        </button>
 
-      <div class="filter" id="filter-box">
-        <div class="label">
-          <h3>Filter Search</h3>
-        </div>
-        <form>
-          <h3>Genre</h3>
-          <div class="genre">
-            <div class="left">
-              <div class="item">
-                <input type="checkbox">
-                <label>Fiction</label> 
-              </div>
-              <div class="item">
-                <input type="checkbox">
-                <label>Biography</label>
-              </div>
-              <div class="item">
-                <input type="checkbox">
-                <label>History</label> 
-              </div>
-              <div class="item">
-                <input type="checkbox">
-                <label>Science</label>
-              </div>
-            </div>
-            <div class="right">
-              <div class="item">
-                <input type="checkbox">
-                <label>Computer</label> 
-              </div>
-              <div class="item">
-                <input type="checkbox">
-                <label>Mathematics</label>
-              </div>
-              <div class="item">
-                <input type="checkbox">
-                <label>Non-Fiction</label>
-              </div>
-              <div class="item">
-                <input type="checkbox">
-                <label>Education</label> 
-              </div>
-            </div>
+        <div class="filter" id="filter-box">
+          <div class="label">
+            <h3>Filter Search</h3>
           </div>
-        </form>
-        <!--
+          <form>
+            <h3>Genre</h3>
+            <div class="genre">
+              <div class="left">
+                <div class="item">
+                  <input type="checkbox" />
+                  <label>Fiction</label>
+                </div>
+                <div class="item">
+                  <input type="checkbox" />
+                  <label>Biography</label>
+                </div>
+                <div class="item">
+                  <input type="checkbox" />
+                  <label>History</label>
+                </div>
+                <div class="item">
+                  <input type="checkbox" />
+                  <label>Science</label>
+                </div>
+              </div>
+              <div class="right">
+                <div class="item">
+                  <input type="checkbox" />
+                  <label>Computer</label>
+                </div>
+                <div class="item">
+                  <input type="checkbox" />
+                  <label>Mathematics</label>
+                </div>
+                <div class="item">
+                  <input type="checkbox" />
+                  <label>Non-Fiction</label>
+                </div>
+                <div class="item">
+                  <input type="checkbox" />
+                  <label>Education</label>
+                </div>
+              </div>
+            </div>
+          </form>
+          <!--
         <div class="ratings">
           <h3>Ratings</h3>
           <div class="rating">
@@ -102,115 +111,153 @@
             <label for="star1"></label>
           </div>
         </div>
-        -->
-      </div>
-    </div>
-
-    <button id="menu" class="hamburger">
-      <img src="resource/menu-svgrepo-com.svg" alt="menu icon">
-    </button>
-
-    <div class="menu" id="menu-box">
-
-      <div class="x-icon-bg">
-        <img src="resource/cross-svgrepo-com.svg" alt="" class="x-icon">
+        --></div>
       </div>
 
-      <div class="label">
-        <h3>Menu</h3>
-      </div>
-      <div class="item">
-        <div class="bg profile">
-          <img src="resource/question-mark-svgrepo-com.svg" alt="qs icon">
+      <button id="menu" class="hamburger">
+        <img src="resource/menu-svgrepo-com.svg" alt="menu icon" />
+      </button>
+
+      <div class="menu" id="menu-box">
+        <div class="x-icon-bg">
+          <img src="resource/cross-svgrepo-com.svg" alt="" class="x-icon" />
         </div>
-        <h3>How to Use?</h3>
-      </div>
-      <div class="item">
-        <div class="bg profile">
-          <img src="resource/profile-about-mobile-ui-svgrepo-com.svg" alt="profile icon">
+
+        <div class="label">
+          <h3>Menu</h3>
         </div>
-        <h3>Creator</h3>
-      </div>
-      <div class="item">
-        <div class="bg phone">
-          <img src="resource/telephone-fill-svgrepo-com.svg" alt="telephone icon">
+        <div class="item">
+          <div class="bg profile">
+            <img src="resource/question-mark-svgrepo-com.svg" alt="qs icon" />
+          </div>
+          <h3>How to Use?</h3>
         </div>
-        <h3>Contact Us</h3>
-      </div>
-    </div>
-  </div>
-
-  <div id="catalog"></div>
-  <div class="test">
-    
-  </div>
-
-  <div class="separator hide" id="separator">
-    <div class="item active">
-      <span class="click-trigger"></span>
-      <h3>ALL</h3>
-    </div>
-    <div class="item">
-      <span class="click-trigger"></span>
-      <h3>FICTION</h3>
-    </div>
-    <div class="item">
-      <span class="click-trigger"></span>
-      <h3>NON-FICTION</h3>
-    </div>
-    <div class="item">
-      <span class="click-trigger"></span>
-      <h3>SCIENCE</h3>
-    </div>
-    <div class="item">
-      <span class="click-trigger"></span>
-      <h3>HISTORY</h3>
-    </div>
-    <div class="item">
-      <span class="click-trigger"></span>
-      <h3>BIOGRAPHY</h3>
-    </div>
-    <div class="item">
-      <span class="click-trigger"></span>
-      <h3>COMPUTER</h3>
-    </div>
-    <div class="item">
-      <span class="click-trigger"></span>
-      <h3>MATHEMATICS</h3>
-    </div>
-  </div>
-
-  <div class="main" id="main">
-
-    <div class="left-section-alt">
-      
-    </div>
-
-    <div class="left-section hide">
-      <div class="item">
-        <div class="click-trigger"></div>
-        <div class="sort">
-          <img src="resource/sort-alpha-asc-svgrepo-com.svg" alt="sort icon">
+        <div class="item">
+          <div class="bg profile">
+            <img
+              src="resource/profile-about-mobile-ui-svgrepo-com.svg"
+              alt="profile icon"
+            />
+          </div>
+          <h3>Creator</h3>
         </div>
-        <h3>Sort</h3>
+        <div class="item">
+          <div class="bg phone">
+            <img
+              src="resource/telephone-fill-svgrepo-com.svg"
+              alt="telephone icon"
+            />
+          </div>
+          <h3>Contact Us</h3>
+        </div>
       </div>
-      <div class="item relative" id="view-mark-button">
+    </div>
+
+    <div id="catalog"></div>
+    <div class="test"></div>
+
+    <div class="separator hide" id="separator">
+      <div class="item active">
         <span class="click-trigger"></span>
-        <div class="bookmark">
-          <img src="resource/bookmark-svgrepo-com(violet).svg" alt="bookmark icon">
-        </div>
-        <h3>View Bookmarks only</h3>
+        <h3>ALL</h3>
       </div>
-
-      
+      <div class="item">
+        <span class="click-trigger"></span>
+        <h3>FICTION</h3>
+      </div>
+      <div class="item">
+        <span class="click-trigger"></span>
+        <h3>NON-FICTION</h3>
+      </div>
+      <div class="item">
+        <span class="click-trigger"></span>
+        <h3>SCIENCE</h3>
+      </div>
+      <div class="item">
+        <span class="click-trigger"></span>
+        <h3>HISTORY</h3>
+      </div>
+      <div class="item">
+        <span class="click-trigger"></span>
+        <h3>BIOGRAPHY</h3>
+      </div>
+      <div class="item">
+        <span class="click-trigger"></span>
+        <h3>COMPUTER</h3>
+      </div>
+      <div class="item">
+        <span class="click-trigger"></span>
+        <h3>MATHEMATICS</h3>
+      </div>
     </div>
 
-    <div class="right-section">
-      <div id="books-container"></div>
-    </div>
-  </div>
+    <div class="main" id="main">
+      <div class="left-section-alt"></div>
 
-  <div class="information" id="information">
-  </div>
-</body>
+      <div class="left-section hide">
+        <div class="item">
+          <div class="click-trigger"></div>
+          <div class="sort">
+            <img
+              src="resource/sort-alpha-asc-svgrepo-com.svg"
+              alt="sort icon"
+            />
+          </div>
+          <h3>Sort</h3>
+        </div>
+        <div class="item relative" id="view-mark-button">
+          <span class="click-trigger"></span>
+          <div class="bookmark">
+            <img
+              src="resource/bookmark-svgrepo-com(violet).svg"
+              alt="bookmark icon"
+            />
+          </div>
+          <h3>View Bookmarked</h3>
+        </div>
+      </div>
+      <div class="container-border"></div>
+
+      <div class="right-section">
+        <div id="books-container"></div>
+      </div>
+      <div class="container-border"></div>
+    </div>
+
+    <div class="information" id="information"></div>
+
+    <div class="separator-to-footer"></div>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section about">
+          <h2 class="logo-text">Logo here</h2>
+          <p>
+            This platform is designed to provide users with access to a vast
+            collection of digital books, articles, and resources. Our goal is to
+            promote literacy, learning, and the joy of reading by making
+            valuable educational materials accessible to everyone, free of
+            charge.
+          </p>
+        </div>
+        <div class="footer-section links">
+          <h2>Developers</h2>
+          <ul>
+            <li><p>Jhonwell Espanola</p></li>
+            <li><p>Neo Isaiah Nimo</p></li>
+            <li><p>Denz Christian Sabalboro</p></li>
+            <li><p>Kenzo Vidal</p></li>
+          </ul>
+        </div>
+        <div class="footer-section contact">
+          <h2>Contact Us</h2>
+          <p>Email: bookoleksyon@gmail.com</p>
+          <p>Phone: +123 456 7890</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>2024 BSCS 1-A | Designed and developed by Group #6</p>
+      </div>
+    </footer>
+  </body>
 </html>
