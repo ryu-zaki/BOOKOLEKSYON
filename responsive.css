@@ -5,6 +5,31 @@
     overflow: hidden;
   }
 
+  .loading-animation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .loading-animation .animation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    right: 60px
+  }
+
+  .loading-animation h2 {
+    position: relative;
+    right: 50px;
+  }
+
+
   .hide {
     visibility: hidden;
   }
