@@ -50,8 +50,16 @@ body {
     background-color: var(--background);
     height: 100%;
     overflow: auto;
-    overflow-y: hidden;
+    margin: 0;
+    padding: 0;
+    max-width: 100dvw;
+    min-height: 100dvh;
 }
+
+html {
+    width: 100vw;
+    overflow-x: hidden;
+  }
 
 /* HEADER =============== */
 .header{
@@ -94,16 +102,6 @@ body {
 .header .web-title .web-logo img{
     width: 30px;
 }
-
-.header .web-title h3{
-    color: var(--panels);
-    font-size: 2.111rem;
-    font-family: var(--font-var-7);
-    margin-top: 5px;
-}
-
-
-
 
 /* SEARCH */
 .header .search {

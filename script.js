@@ -188,3 +188,21 @@ const reRenderMainPage = ({category, isSorted, }) => {
     displayBooks(collection, allBookmarks);
     activateBookCatalogEvents();
 }
+
+//responsiveness 
+
+const checkResolution = () => {
+    const screenWidth = window.innerWidth;
+
+    if (screenWidth <= 425){
+        
+    }
+
+    else {
+        
+    }
+}
+
+const separatorDiv = () => {
+    
+}
