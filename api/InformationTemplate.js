@@ -66,9 +66,6 @@ const setTemplate = (info) => {
             </ul>
           </div>
         </div>
-        <div class="source">
-          <h3>SOURCE : <span><i>Open Library API</i></span></h3>
-        </div>
       </div>
     </div>
 

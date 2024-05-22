@@ -1,7 +1,8 @@
 import { booksCategory, displayBooks, appendBookInfo, bookCategoryFilter } from "./api/Functionalities.js";
 import AllBooks from "./api/ApiSource.js";
+import { viewBookMark } from "./bookmarkFunctionality.js";
 
-const menuItems = document.querySelectorAll('.separator .item');
+const menuItems = document.querySelectorAll('.separator .item .click-trigger');
 const loadingAnimation = document.querySelector(".loading-animation");
 const filterBtn = document.getElementById('filter');
 const filter = document.getElementById('filter-box');
@@ -14,25 +15,22 @@ let menuBtnisOpen = false;
 const inputBar = document.getElementById('input');
 let inputisFocused = false;
 
-const viewMarkBtn = document.getElementById('view-mark-button');
-const viewMark = document.getElementById('view-marked-box')
-let viewMarkBtnisOpen = false;
+const viewMarkBtn = document.querySelector('#view-mark-button .click-trigger');
 
 const books = document.getElementsByClassName('book-cover');
 const mainSection = document.getElementById('main');
 const separator = document.getElementById('separator');
 const information = document.getElementById('information');
 let bookisClick = false;
-
-const backBtn = document.getElementById('back-button');
-let backBtnisClick = false;
+let isSorted = false;
 
 menuItems.forEach(menuItem => {
     menuItem.addEventListener('click', () =>{
         menuItems.forEach(Item =>{
-            Item.classList.remove('active');
+            Item.parentElement.classList.remove('active');
         });
-        menuItem.classList.add('active')
+
+        menuItem.parentElement.classList.add('active')
     })
 })
 
@@ -52,7 +50,6 @@ menuBtn.addEventListener('click', () => {
     }else{
         menu.style.display = 'flex';
         filter.style.display = 'none';
-        viewMark.style.display='none';
     }
     menuBtnisOpen = !menuBtnisOpen;
 })
@@ -62,19 +59,10 @@ inputBar.addEventListener('focus', () => {
     if(inputisFocused){
         filter.style.display = 'none';
         menu.style.display = 'none';
-        viewMark.style.display='none';
     }
 })
 
-viewMarkBtn.addEventListener('click', () =>{
-    if(viewMarkBtnisOpen){
-        viewMark.style.display='none';
-    }else{
-        viewMark.style.display='flex';
-    }
-
-    viewMarkBtnisOpen = !viewMarkBtnisOpen;
-})
+viewMarkBtn.addEventListener('click', viewBookMark)
 
 
 
@@ -99,9 +87,12 @@ const storedBookmarks = localStorage.getItem("bookmarks");
     
 let allBookmarks = !!storedBookmarks ? JSON.parse(storedBookmarks) : [];
 
-//methods for all affected events because in switching to different genre
+
+
 //displays the book Catalogs
 displayBooks(booksCategory, allBookmarks);
+
+//method for all affected events because in switching to different genre
 const activateBookCatalogEvents = () => {
     document.querySelectorAll('.books').forEach(book => {
         book.addEventListener('click', ({target}) => 
@@ -160,15 +151,14 @@ const activateBookCatalogEvents = () => {
 
 activateBookCatalogEvents();
 
-const allNavs = document.querySelectorAll('.separator div > h3');
+const allNavs = document.querySelectorAll('.separator div > .click-trigger');
 
 allNavs.forEach(nav => {
     nav.addEventListener('click', ({target}) => {
 
-        const collection = bookCategoryFilter(target.innerText.toLowerCase());
+        const category = target.nextElementSibling.innerText.toLowerCase();
 
-        displayBooks(collection, allBookmarks);
-        activateBookCatalogEvents();
+        reRenderMainPage({isSorted, category})
     })
 })
 
@@ -180,14 +170,21 @@ sortBtn.addEventListener('click', ({target}) => {
    const btnLabel = document.querySelector('.left-section .item h3');
    const activeNav = document.querySelector('.separator .item.active h3');
    
-   let isSorted = false;
+   
    if (btnLabel.innerText === "Sort") {
     btnLabel.innerText = "Unsort";
     isSorted = true;
    } else {
     btnLabel.innerText = "Sort";
+    isSorted = false;
    }
-   const collection = bookCategoryFilter(activeNav.innerText.toLowerCase(), isSorted);
-   displayBooks(collection, allBookmarks);
-   activateBookCatalogEvents();
+
+
+   reRenderMainPage({isSorted, category: activeNav.innerText.toLowerCase()})
 })
+
+const reRenderMainPage = ({category, isSorted, }) => {
+    const collection = bookCategoryFilter(category, isSorted);
+    displayBooks(collection, allBookmarks);
+    activateBookCatalogEvents();
+}
