@@ -67,8 +67,19 @@ const displayBooks = (books, allBookmarks) => {
   const container = document.getElementById("books-container");
   
   container.innerHTML = "";
+  
+  if (!books.length) {
+    
+    container.innerHTML = 
+    `<div class="error-container">
+    <img draggable="false" class="error-page" src="./resource/404 page.png" />
+    <h2>No Book Found</h2>
+    </div>
+    `
 
-
+    return;
+  }
+  
   for (let i = 0; i < books.length; i++) {
 
     const itemDiv = document.createElement("div");

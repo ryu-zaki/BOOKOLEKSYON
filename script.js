@@ -60,14 +60,6 @@ menuBtn.addEventListener('click', () => {
     menuBtnisOpen = !menuBtnisOpen;
 })
 
-inputBar.addEventListener('focus', () => {
-    inputisFocused = true;
-    if(inputisFocused){
-        filter.style.display = 'none';
-        menu.style.display = 'none';
-    }
-})
-
 //view bookmarks event
 viewMarkBtn.addEventListener('click', ({target}) => {
     const bookmarkIcon = document.querySelector("#view-mark-button img");

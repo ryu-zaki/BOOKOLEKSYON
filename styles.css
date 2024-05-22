@@ -667,6 +667,7 @@ html {
     background-color: var(--panels);
     z-index: 100;
     overflow: hidden;
+    min-height: 23em;
     overflow-y: scroll;
     justify-content: space-between;
 }
@@ -1255,6 +1256,28 @@ html {
 .information  .right-section .lower .book-suggestions .item .book-info span{
     font-family: var(--font-var-12);
     font-size: .68rem;
+}
+
+/* Error Page */
+
+.error-container {
+    color: #8094B9;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    /* min-height: 70vh; */
+
+    display: flex;
+    font-size: 1em;
+    gap: 1em;
+    align-items:center;
+    flex-direction: column;
+    justify-content: start;
+}
+
+.error-page {
+    user-select: none;
+    max-width: 22em;
+    width: 90%;
 }
 
 @media all and (min-height: 730px) {
