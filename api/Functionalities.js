@@ -2,7 +2,7 @@ import AllBooks from './ApiSource.js';
 import setTemplate from './InformationTemplate.js';
 
 
-const bookCategoryFilter = (category, isSorted = false) => {
+const bookCategoryFilter = (category, isSorted = false, isMarkOnly = false) => {
   
   const bookArr = [];
 
@@ -32,6 +32,26 @@ const bookCategoryFilter = (category, isSorted = false) => {
       return 0
 
     })
+  }
+
+  /* Filter mechanism for visibility of bookmarks */
+  if (isMarkOnly) {
+  
+    const newArrWithMark = [];
+
+    const bookMarks = JSON.parse(localStorage.getItem("bookmarks"));
+    const bookTitles = bookMarks.map(({title}) => title);
+
+    bookArr
+    .forEach(book => {
+    
+      if (bookTitles.includes(book.title)) {
+          newArrWithMark.push(book);
+      }
+
+    })
+  
+    return newArrWithMark;
   }
 
   return [...bookArr];
