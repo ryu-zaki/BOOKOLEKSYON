@@ -581,7 +581,7 @@ body {
     position: relative;
 }
 
-.item  .click-trigger {
+.item .click-trigger {
     position: absolute;
     inset: 0;
     cursor: pointer;
@@ -846,7 +846,6 @@ body {
 .information .left-section{
     display: flex;
     background-color: var(--panels);
-    height: 8em;
     border: 2px solid var(--panel-border);
     border-top-left-radius: 14px;
     border-bottom-left-radius: 14px;
