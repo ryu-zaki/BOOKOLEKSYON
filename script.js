@@ -14,10 +14,6 @@ let menuBtnisOpen = false;
 const inputBar = document.getElementById('input');
 let inputisFocused = false;
 
-const otherBtn = document.getElementById('other');
-const other = document.getElementById('other-box');
-let otherBtnisOpen = false;
-
 const viewMarkBtn = document.getElementById('view-mark-button');
 const viewMark = document.getElementById('view-marked-box')
 let viewMarkBtnisOpen = false;
@@ -37,19 +33,6 @@ menuItems.forEach(menuItem => {
             Item.classList.remove('active');
         });
         menuItem.classList.add('active')
-
-        if (menuItem === otherBtn) {
-            otherBtnisOpen = !otherBtnisOpen;
-
-            if(otherBtnisOpen){
-                other.style.display = "flex";
-            } else {
-                other.style.display = "none";
-            }
-        }else{
-            otherBtnisOpen = false;
-            other.style.display = "none";
-        }
     })
 })
 
@@ -70,7 +53,6 @@ menuBtn.addEventListener('click', () => {
         menu.style.display = 'flex';
         filter.style.display = 'none';
         viewMark.style.display='none';
-        other.style.display = "none";
     }
     menuBtnisOpen = !menuBtnisOpen;
 })
@@ -188,4 +170,24 @@ allNavs.forEach(nav => {
         displayBooks(collection, allBookmarks);
         activateBookCatalogEvents();
     })
+})
+
+
+/* Sort functionalities */
+const sortBtn = document.querySelector('.left-section .item .click-trigger');
+
+sortBtn.addEventListener('click', ({target}) => {
+   const btnLabel = document.querySelector('.left-section .item h3');
+   const activeNav = document.querySelector('.separator .item.active h3');
+   
+   let isSorted = false;
+   if (btnLabel.innerText === "Sort") {
+    btnLabel.innerText = "Unsort";
+    isSorted = true;
+   } else {
+    btnLabel.innerText = "Sort";
+   }
+   const collection = bookCategoryFilter(activeNav.innerText.toLowerCase(), isSorted);
+   displayBooks(collection, allBookmarks);
+   activateBookCatalogEvents();
 })

@@ -2,23 +2,43 @@ import AllBooks from './ApiSource.js';
 import setTemplate from './InformationTemplate.js';
 
 
-const bookCategoryFilter = (category) => {
+const bookCategoryFilter = (category, isSorted = false) => {
   
   const bookArr = [];
 
   for (let i = 0; i < AllBooks.length; i++) {
     const book = AllBooks[i];
+    const isSameBook = bookArr.some(data => data.title === book.title);
 
-    if (book.genre.toLowerCase() === category.toLowerCase()) {
+    if (category === "all" && !isSameBook) {
+      bookArr.push(book);
+    }
+
+    else if (book.genre.toLowerCase() === category.toLowerCase()) {
        bookArr.push(book);
     }
+  }
+
+  if (isSorted) {
+    bookArr.sort((a, b) => {
+
+      if (a.title < b.title) {
+        return -1
+      } 
+      if (a.title > b.title) {
+        return 1
+      }
+      
+      return 0
+
+    })
   }
 
   return [...bookArr];
 
 }
 
-const booksCategory = bookCategoryFilter("history");
+const booksCategory = bookCategoryFilter("all");
 
 
 

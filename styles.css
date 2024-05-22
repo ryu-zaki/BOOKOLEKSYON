@@ -526,10 +526,9 @@ body {
 .main{
     display: flex;
     flex-direction: column;
-    height: calc(100svh - 230px);
+    height: calc(100svh - 250px);
     width: calc(100% - 70px);
     margin: auto;
-
     position: relative;
 }
 
@@ -539,6 +538,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: end;
+    min-height: 2em;
 
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
@@ -575,6 +575,16 @@ body {
     justify-content: center;
     width: 20px;
     height: 15px;
+}
+
+.left-section .item {
+    position: relative;
+}
+
+.item  .click-trigger {
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
 }
 
 /* VIEW MARKED ICON */
@@ -835,13 +845,11 @@ body {
 
 .information .left-section{
     display: flex;
-    flex: 10.2;
     background-color: var(--panels);
-
+    height: 8em;
     border: 2px solid var(--panel-border);
     border-top-left-radius: 14px;
     border-bottom-left-radius: 14px;
-
     padding: 40px 20px;
 }
 
