@@ -1,6 +1,5 @@
 import { booksCategory, displayBooks, appendBookInfo, bookCategoryFilter } from "./api/Functionalities.js";
 import AllBooks from "./api/ApiSource.js";
-import { viewBookMark } from "./bookmarkFunctionality.js";
 
 const menuItems = document.querySelectorAll('.separator .item .click-trigger');
 const loadingAnimation = document.querySelector(".loading-animation");
@@ -23,6 +22,13 @@ const separator = document.getElementById('separator');
 const information = document.getElementById('information');
 let bookisClick = false;
 let isSorted = false;
+let isMarkOnly = false;
+
+const reRenderMainPage = ({category, isSorted, isMarkOnly}) => {
+    const collection = bookCategoryFilter(category, isSorted, isMarkOnly);
+    displayBooks(collection, allBookmarks);
+    activateBookCatalogEvents();
+}
 
 menuItems.forEach(menuItem => {
     menuItem.addEventListener('click', () =>{
@@ -62,7 +68,29 @@ inputBar.addEventListener('focus', () => {
     }
 })
 
-viewMarkBtn.addEventListener('click', viewBookMark)
+//view bookmarks event
+viewMarkBtn.addEventListener('click', ({target}) => {
+    const bookmarkIcon = document.querySelector("#view-mark-button img");
+    const bookMarkLabel = document.querySelector("#view-mark-button h3");
+
+    const parentEl = target.parentElement;
+
+    if (!isMarkOnly) {
+        bookMarkLabel.innerText = "Close Bookmarks"
+        isMarkOnly = true;
+        parentEl.classList.add("active");
+        bookmarkIcon.src = "resource/cross-svgrepo-com.svg";
+        
+    } else {
+        bookMarkLabel.innerText = "View Bookmarks only"
+        isMarkOnly = false; 
+        bookmarkIcon.src = "resource/bookmark-svgrepo-com(violet).svg";
+        parentEl.classList.remove("active");
+    }
+    
+    
+    reRenderMainPage({category: "all", isSorted, isMarkOnly});
+})
 
 
 
@@ -158,7 +186,7 @@ allNavs.forEach(nav => {
 
         const category = target.nextElementSibling.innerText.toLowerCase();
 
-        reRenderMainPage({isSorted, category})
+        reRenderMainPage({isSorted, category, isMarkOnly})
     })
 })
 
@@ -180,11 +208,5 @@ sortBtn.addEventListener('click', ({target}) => {
    }
 
 
-   reRenderMainPage({isSorted, category: activeNav.innerText.toLowerCase()})
+   reRenderMainPage({isSorted, category: activeNav.innerText.toLowerCase(), isMarkOnly})
 })
-
-const reRenderMainPage = ({category, isSorted, }) => {
-    const collection = bookCategoryFilter(category, isSorted);
-    displayBooks(collection, allBookmarks);
-    activateBookCatalogEvents();
-}

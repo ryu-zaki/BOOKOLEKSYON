@@ -538,6 +538,7 @@ html {
     align-items: center;
     justify-content: end;
     min-height: 2.6em;
+    max-height: 2.6em;
 
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
