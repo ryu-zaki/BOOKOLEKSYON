@@ -88,8 +88,8 @@ viewMarkBtn.addEventListener('click', ({target}) => {
         parentEl.classList.remove("active");
     }
     
-    
-    reRenderMainPage({category: "all", isSorted, isMarkOnly});
+    const activeNavText = document.querySelector('.separator .item.active h3');
+    reRenderMainPage({category: activeNavText.innerText.toLowerCase(), isSorted, isMarkOnly});
 })
 
 
