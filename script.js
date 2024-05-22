@@ -210,5 +210,3 @@ sortBtn.addEventListener('click', ({target}) => {
 
    reRenderMainPage({isSorted, category: activeNav.innerText.toLowerCase(), isMarkOnly})
 })
-
-
