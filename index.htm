@@ -27,17 +27,14 @@
 
   <div class="header">
     <div class="web-title">
-      <div class="web-logo">
-        <img src="resource/open-book-svgrepo-com.svg" alt=""> </img>
-      </div>
-      <h3>Bookoleksyon</h3>
+      <img src="resource/bookoleksyon.png" alt="Bookleksyon">
     </div>
     <div class="search">
       <button id="search">
         <img src="resource/search-svgrepo-com.svg" alt="search icon">
       </button>
-      <input id="input" type="text" placeholder="Search for titles, authors, or genres...">
-      <button id="filter">
+      <input id="input" type="text" placeholder="Search for titles, authors, or genres..." class="hide">
+      <button id="filter" class="hide">
         <img src="resource/filter-svgrepo-com.svg" alt="filter icon">
       </button>
 
@@ -106,7 +103,7 @@
       </div>
     </div>
 
-    <button id="menu">
+    <button id="menu" class="hamburger">
       <img src="resource/menu-svgrepo-com.svg" alt="menu icon">
     </button>
 
@@ -140,7 +137,12 @@
     </div>
   </div>
 
-  <div class="separator" id="separator">
+  <div id="catalog"></div>
+  <div class="test">
+    
+  </div>
+
+  <div class="separator hide" id="separator">
     <div class="item active">
       <span class="click-trigger"></span>
       <h3>ALL</h3>
@@ -177,7 +179,11 @@
 
   <div class="main" id="main">
 
-    <div class="left-section">
+    <div class="left-section-alt">
+      
+    </div>
+
+    <div class="left-section hide">
       <div class="item">
         <div class="click-trigger"></div>
         <div class="sort">
