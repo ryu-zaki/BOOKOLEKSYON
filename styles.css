@@ -1364,6 +1364,7 @@ a {
     position: relative;
     bottom: 0;
     width: 100%;
+    display: none;
   }
   
   .footer-content {
@@ -1427,10 +1428,33 @@ a {
     margin-top: 20px;
     font-size: 14px;
   }
-  
-  @media (max-width: 768px) {
-    .footer-content {
-      flex-direction: column;
-      align-items: center;
-    }
+
+  .main .left-section-alt {
+    display: none;
+    width: 100%;
+  }
+
+  #dropdown-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 15px 15px;
+    height: auto;
+    border-radius: 10px;
+    width: 200px;
+    font-family: var(--font-var-3), sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    position: absolute;
+    top: -15px;
+    right: 0;
+    border: none;
+    cursor: pointer;
+    color: var(--dark-purple);
+  }
+
+    #dropdown-select .dropdown-item:hover,
+    #dropdown-select .dropdown-item:focus,
+    #dropdown-select .dropdown-item.active {
+    background-color: var(--dark-purple); /* Set your desired violet color here */
   }
