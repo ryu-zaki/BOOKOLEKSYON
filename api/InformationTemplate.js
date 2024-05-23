@@ -108,15 +108,6 @@ const setTemplate = (info) => {
               <span>by Isaac Nelson</span>
             </div>
           </div>
-
-          <div class="item">
-            <div class="book-cover"><img src="resource/sample-pic3.jpg" alt=""></div>
-            <div class="book-info">
-              <h3>Harry Potter</h3>
-              <span>by J.K. Rowling</span>
-            </div>
-          </div>
-
         </div>
       </div>
     </div>
