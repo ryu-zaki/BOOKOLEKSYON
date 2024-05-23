@@ -139,6 +139,7 @@ const AllBooks = [
         "title": "Sapiens",
         "pdf": "https://www.1pezeshk.com/wp-content/uploads/2019/07/Sapiens-A-Brief-History-of-Humankind.pdf",
         "ratings": 4.5,
+        "author": "Yuval Noah Harari",
         "synopsis": "Sapiens tackles the history of humankind, from the emergence of Homo sapiens in Africa to the present day, encompassing the Cognitive Revolution, Agricultural Revolution, and more.",
         "number_of_pages": 464,
         "characters": [],

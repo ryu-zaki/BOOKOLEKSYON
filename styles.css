@@ -665,7 +665,7 @@ html {
 
 .main .right-section{
     background-color: var(--panels);
-    z-index: 100;
+    z-index: 10;
     overflow: hidden;
     min-height: 23em;
     overflow-y: scroll;

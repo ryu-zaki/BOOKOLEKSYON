@@ -10,6 +10,10 @@
     justify-content: center;
 }
 
+.justify-between {
+    justify-content: space-between;
+}
+
 .items-center {
     align-items: center;
 }
@@ -18,15 +22,96 @@
     position: absolute;
 }
 
-.absolute {
+.fixed {
     position: fixed;
 }
 
-.inse-0 {
+.inset-0 {
     inset: 0;
+}
+
+.top-0 {
+    top: 0;
+}
+
+.left-0 {
+    left: 0;
+}
+
+.right-0 {
+    right: 0;
+}
+
+.bottom-0 {
+    bottom: 0;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.translate-y-full {
+    transform: translateY(100%);
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.z-10 {
+    z-index: 10;
+}
+
+
+/* Autosuggestion */
+.ratings-suggestion > img {
+    width: 1.3em;
 }
 
 #view-mark-button.active {
     background-color: #674188;
     color: #f5f5f5;
+}
+
+.suggestions-con {
+    z-index: 20;
+    border-radius: .7em;
+    overflow: hidden;
+}
+
+.suggestions-con > div p {
+   text-align: center;
+   font-weight: 900;
+   color: #674188;
+   opacity: .7;
+   
+   font-style: italic;
+}
+
+
+.suggestions-con > * {
+    padding: 1em;
+    background-color: #F7EFE5;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: all .3s;
+}
+
+.suggestions-con > * h2 {
+    font-size: 1.1em;
+    font-weight: 100;
+    margin-bottom: .2em;
+}
+
+.suggestions-con > * h2 span.highlight {
+    color: #674188;
+    font-weight: 900;
+}
+
+.suggestions-con > * span {
+    color: #666;
+    font-size: .9em;
+}
+
+.suggestions-con > *:hover {
+    background-color: #fffbf5;
 }

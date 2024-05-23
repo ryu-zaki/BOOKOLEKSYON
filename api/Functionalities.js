@@ -1,6 +1,6 @@
 import AllBooks from './ApiSource.js';
 import setTemplate from './InformationTemplate.js';
-
+import { generateIndividualBook } from '../script.js';
 
 const bookCategoryFilter = (category, isSorted = false, isMarkOnly = false) => {
   
@@ -140,4 +140,105 @@ const generateProductCatalog = ({title, genre, author, isBookMarked}) => {
   )
 }
 
-export {booksCategory, displayBooks, appendBookInfo, bookCategoryFilter};
+const handleSearch = ({target}) => {
+  const suggestionsConainer = document.querySelector('.suggestions-con');
+  if (!target.value.trim()) {
+    suggestionsConainer.innerHTML = "";
+    return;
+  } 
+  
+  const inputValue = target.value.toLocaleLowerCase();
+
+  const repeatFilter = [];
+
+  for (let i = 0; i < AllBooks.length; i++) {
+
+    const isRepeat = repeatFilter.some(data => data.title === AllBooks[i].title);
+
+    if (!isRepeat) {
+      repeatFilter.push(AllBooks[i])
+    }
+    
+  }
+
+  const searchBooks = repeatFilter
+  .filter(data => data.title.toLocaleLowerCase().startsWith(inputValue))
+  .map((data) => generateSuggestionBox({...data,inputValue}))
+  .filter((data, index) => index < 3);
+
+  suggestionsConainer.innerHTML = !searchBooks.length ? `<div><p>book not found</p></div>` : searchBooks.join("")
+  console.log(searchBooks);
+
+  suggestionBoxEvents()
+
+}
+
+const suggestionBoxEvents = () => {
+  
+
+  const suggestions = document.querySelectorAll('[data-bookSuggestion]');
+
+  suggestions.forEach(btn => {
+    btn.addEventListener('click', ({target}) => {
+      document.querySelector('#book-search-input').value = "";
+      document.querySelector('.suggestions-con').innerHTML = "";
+      
+      const searchedBook = AllBooks.find(data => data.title.toLocaleLowerCase() === target.id.toLocaleLowerCase());
+
+      generateIndividualBook(searchedBook);
+
+    })
+  })
+
+
+}
+
+/* Autosuggestion */
+const generateSuggestionBox = ({author, ratings, title, inputValue}) => {
+  
+  const titleArr = []
+  for (let i = 0; i < title.length; i++) {
+
+    if (inputValue[i] === title[i].toLocaleLowerCase()) {
+      titleArr.push(`<span class="highlight">${title[i]}</span>`)
+    } else {
+      titleArr.push(title[i])
+    }
+
+  }
+
+  const actualTitle = titleArr.join("");
+
+  const ratingsImgs = [];
+
+  for (let i = 0; i < 5; i++) {
+
+    let img;
+
+    if (i < Math.floor(ratings)) {
+      img = "star-fill";
+    } else {
+      img = "star-outline";
+    }
+
+    ratingsImgs.push(`<img src="resource/${img}.svg" alt="star-icon">`)
+  }
+
+  return (
+    `
+    <div class="flex relative justify-between w-full items-center">
+          <div data-bookSuggestion id="${title}" class="absolute z-10 inset-0 cursor-pointer"></div>
+          <div>
+            <h2>${actualTitle}</h2>
+            <span>by ${author}</span>
+          </div>
+
+          <div class="ratings-suggestion">
+            ${ratingsImgs.join("")}
+          </div>
+        </div>
+    `
+  )
+}
+
+export {booksCategory, displayBooks, appendBookInfo, bookCategoryFilter, handleSearch};

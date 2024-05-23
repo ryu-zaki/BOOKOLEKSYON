@@ -32,14 +32,20 @@
     <div class="web-title">
       <img src="resource/bookoleksyon.png" alt="Bookleksyon">
     </div>
-    <div class="search">
+    <div class="search relative">
       <button id="search">
         <img src="resource/search-svgrepo-com.svg" alt="search icon">
       </button>
-      <input id="genre-search" type="text" placeholder="Search for titles, authors, or genres..." class="hide">
+      <input id="book-search-input" type="text" placeholder="Search for book titles" class="hide">
+        
       <button id="filter" class="hide">
         <img src="resource/filter-svgrepo-com.svg" alt="filter icon">
       </button>
+      
+      <!-- Auto Suggestion -->
+      <div data-autosuggestion class="absolute z-10 suggestions-con translate-y-full w-full left-0 bottom-0">
+
+      </div>
 
       <div class="filter" id="filter-box">
         <div class="label">

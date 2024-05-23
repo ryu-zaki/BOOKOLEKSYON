@@ -1,4 +1,4 @@
-import { booksCategory, displayBooks, appendBookInfo, bookCategoryFilter } from "./api/Functionalities.js";
+import { booksCategory, displayBooks, appendBookInfo, bookCategoryFilter, handleSearch } from "./api/Functionalities.js";
 import AllBooks from "./api/ApiSource.js";
 
 const menuItems = document.querySelectorAll('.separator .item .click-trigger');
@@ -117,21 +117,9 @@ const activateBookCatalogEvents = () => {
     document.querySelectorAll('.books').forEach(book => {
         book.addEventListener('click', ({target}) => 
             {
-                      loadingAnimation.style.display = "flex";
                       const selectedBook = AllBooks.find(book => book.title === target.id);
-                    
-                      appendBookInfo(information, {...selectedBook})
-    
+                      generateIndividualBook(selectedBook)
                       
-                      setTimeout(() => {
-                        //visibility of information
-                        loadingAnimation.style.display = "none";
-
-                        information.style.display='flex';
-                        mainSection.style.display='none';
-                        separator.style.display='none';
-
-                      }, 1000)
                       
             });
     });
@@ -169,6 +157,21 @@ const activateBookCatalogEvents = () => {
     });
 }
 
+const generateIndividualBook = (bookInfo) => {
+    loadingAnimation.style.display = "flex";
+                  
+    setTimeout(() => {
+      //visibility of information
+      loadingAnimation.style.display = "none";
+      
+      appendBookInfo(information, {...bookInfo})
+      information.style.display='flex';
+      mainSection.style.display='none';
+      separator.style.display='none';
+      
+    }, 1000)
+}
+
 activateBookCatalogEvents();
 
 const allNavs = document.querySelectorAll('.separator div > .click-trigger');
@@ -202,3 +205,11 @@ sortBtn.addEventListener('click', ({target}) => {
 
    reRenderMainPage({isSorted, category: activeNav.innerText.toLowerCase(), isMarkOnly})
 })
+
+/* Search Functionality */
+const searchInput = document.querySelector("#book-search-input");
+
+
+searchInput.addEventListener('input', handleSearch)
+
+export {generateIndividualBook}
