@@ -1,3 +1,5 @@
+import AllBooks from "./ApiSource.js";
+
 const setTemplate = (info) => {
 
     const {title, author, synopsis, ratings, characters, genre, pdf} = info;
@@ -18,6 +20,16 @@ const setTemplate = (info) => {
     const contributors = characters.map(name => {
         return `<li>${name}</li>`
     });
+
+    /* Suggested books functionality */
+    const suggestedBooks = AllBooks.filter(book => {
+      return book.title !== title && book.genre === genre;
+    });
+    const shuffleBooks = 
+    shuffle(suggestedBooks)
+    .filter((data, index) => index < 2)
+    .map(data => generateSuggestedBook(data));
+
 
     return (
         `
@@ -93,27 +105,44 @@ const setTemplate = (info) => {
         <h3>More Like This</h3>
         <div class="book-suggestions">
 
-          <div class="item">
-            <div class="book-cover"><img src="resource/sample-pic1.jpg" alt=""></div>
-            <div class="book-info">
-              <h3>really good, actually</h3>
-              <span>by Monica Heisey</span>
-            </div>
-          </div>
+          ${shuffleBooks.join("")}
 
-          <div class="item">
-            <div class="book-cover"><img src="resource/sample-pic2.png" alt=""></div>
-            <div class="book-info">
-              <h3>Don't Look Back</h3>
-              <span>by Isaac Nelson</span>
-            </div>
-          </div>
         </div>
       </div>
     </div>
         `
     )
 } 
+
+const generateSuggestedBook = ({title, genre, author}) => {
+
+  return (
+    `<div class="item relative">
+
+    <div id="${title}" class="click-trigger suggested-book-trigger"></div>
+
+    <div class="book-cover"><img src="resource/book covers/${genre.toLowerCase()}/${title.toLowerCase()}.png" alt=""></div>
+    <div class="book-info text-center">
+      <h3>${title}</h3>
+      <span>by ${author}</span>
+    </div>
+  </div>`
+  )
+}
+
+const shuffle = (arr) => {
+
+  for (let i = arr.length - 1; i > 0; i--) {
+
+    const randomIndex = Math.floor(Math.random() * (i + 1));
+
+    [arr[i], arr[randomIndex]] = [arr[randomIndex], arr[i]];
+
+  }
+
+  return arr;
+
+}
 
 
 

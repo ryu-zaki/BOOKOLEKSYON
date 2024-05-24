@@ -168,6 +168,8 @@ const generateIndividualBook = (bookInfo) => {
       information.style.display='flex';
       mainSection.style.display='none';
       separator.style.display='none';
+
+      window.scrollTo({top: 0})
       
     }, 1000)
 }
@@ -211,5 +213,6 @@ const searchInput = document.querySelector("#book-search-input");
 
 
 searchInput.addEventListener('input', handleSearch)
+
 
 export {generateIndividualBook}

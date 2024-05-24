@@ -1136,7 +1136,7 @@ html {
 .information .right-section{
     display: flex;
     flex-direction: column;
-    min-width: 20em;
+    min-width: 23em;
     background-color: var(--panels);
 
     border: 2px solid var(--panel-border);
@@ -1215,7 +1215,7 @@ html {
 .information .right-section .lower h3{
     font-family: var(--font-var-3);
     font-weight: 600;
-    font-size: 2.7rem;
+    font-size: 1.7rem;
     color: var(--dark-purple);
     padding: 10px 25px;
 }
@@ -1223,8 +1223,10 @@ html {
 /* BOOK SUGGESTION SELECTION */
 .information  .right-section .lower .book-suggestions {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    width: 100%;
+    grid-template-columns: 1fr 1fr; 
+    margin-top: 1em;
+    gap: 1em;
 }
 
 .information  .right-section .lower .book-suggestions .item{
@@ -1254,6 +1256,7 @@ html {
 .information  .right-section .lower .book-suggestions .item .book-info{
     display: flex;
     flex-direction: column;
+    gap: .3em;
     align-items: center;
 }
 
@@ -1297,8 +1300,6 @@ html {
 
     /* BOOK SUGGESTION SELECTION */
     .information  .right-section .lower .book-suggestions {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
         column-gap: 10px;
         row-gap: 50px;
 }

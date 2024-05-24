@@ -102,6 +102,9 @@ const appendBookInfo = (container, info) => {
   
   activateInfoEventListeners();
 
+  /* Click Events of suggested books */
+  bookSuggestionsEvents();
+
 }
 
 const activateInfoEventListeners = () => {
@@ -239,6 +242,29 @@ const generateSuggestionBox = ({author, ratings, title, inputValue}) => {
         </div>
     `
   )
+}
+
+
+const bookSuggestionsEvents = () => {
+
+  /* Suggested book for selected book */
+
+  const bookSuggestions = document.querySelectorAll(".suggested-book-trigger");
+ 
+   bookSuggestions.forEach((book) => {
+  
+    book.addEventListener('click', ({target}) => {
+      
+      const selectedBook = AllBooks.find(book => {
+        return book.title === target.id;
+      })
+
+      generateIndividualBook(selectedBook);
+
+    })
+
+  })
+
 }
 
 export {booksCategory, displayBooks, appendBookInfo, bookCategoryFilter, handleSearch};
