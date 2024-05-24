@@ -1,0 +1,261 @@
+:root {
+    --listGap: 2em;
+  }
+
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    
+  } 
+      
+      
+      body {
+        background: url('./resource/intro-bg.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        min-height: 100%;
+      }
+
+      body div.overlay {
+        display: block;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        border-radius: 50%;
+        
+        z-index: 1;
+        width: 20vw;
+    
+        aspect-ratio: 1;
+        
+        transform: translateX(-50%) translateY(-50%) scale(0);
+        background-color: rgba(0,0,0,0.6);
+        animation: scaleUp 1.3s 1.6s forwards;
+      }
+
+      @keyframes scaleUp {
+
+        to {
+            transform: translateX(-50%) translateY(-50%) scale(6);
+        }
+        
+      }
+
+      body {
+        overflow: hidden;
+        background-color: #f5f5f5;
+      }
+
+      
+
+      .bg-img {
+        position: absolute;
+        
+        opacity: 1;
+      }
+
+      .book {
+        top: 10%;
+        left: 5%;
+      }
+
+      .glass {
+        bottom: 10%;
+        left: 10%;
+      }
+
+      ul {
+        position: absolute;
+        display: flex;
+        z-index: 10;
+        list-style: none;
+        gap: var(--listGap);
+        color: #f5f5f5;
+        font-size: .9em;
+        padding-block: 3em;
+        width: 100%;
+        justify-content: center;
+      /*   border: 1px solid red; */
+      }
+
+      main {
+        width: 100vw;
+        min-height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+        position: relative;
+        z-index: 10;
+      }
+
+      main > div {
+        display: flex;
+        margin-top: 5em;
+        flex-direction: column;
+        align-items: center;
+        /* border: 1px solid red; */
+        gap: .4em;
+        width: 100%;
+        position: relative;
+      }
+
+      main > div::before {
+
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 80%;
+        max-width: 50em;
+        height: .4em;
+        background-color: #f5f5f5;
+        scale: 0 1;
+
+        animation: line 1.6s .6s forwards, changeColor 1.6s 1.5s forwards;
+      }
+
+      @keyframes changeColor {
+
+        to {
+            background-color: #674188;
+        }
+        
+      }
+
+      main > div > div {
+        overflow: hidden;
+        min-height: 5em;
+
+        display: flex;
+        width: 100%;
+        justify-content: center;
+      }
+
+      main > div > div:first-child {
+        align-items: flex-end;
+      }
+
+      main > div > div:last-child {
+        align-items: flex-start;
+      }
+
+      main h1 {
+        color: #f5f5f5;
+        font-size: clamp(2em, 10vw, 5em);
+        transform: translateY(100%);
+        animation: elementVisibleText .9s 1.6s forwards;
+      }
+
+      main button {
+        background-color: white;
+        color: #674188;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border: 0; 
+        font-size: clamp(.8em, 4vw, 1em);
+        outline: 0;
+
+        font-weight: bold;
+        padding: 1em 2em;
+        cursor: pointer;
+        border-radius: .7em;
+        transform: translateY(-100%);
+        animation: elementVisibleBtn .9s 1.6s forwards;
+        position: relative;
+        overflow: hidden;
+        transition: all .6s;
+      }
+
+      main button::before {
+        content: '';
+        position:absolute;
+        transform: translate(-50%, -50%) scale(0);
+        top: 50%;
+        left: 50%;
+
+        width: 1em;
+        height: 1em;
+        border-radius: 50%;
+        background-color: #674188;
+        transition: all .6s;
+        z-index: -1;
+      }
+
+      main button:hover {
+        color: #f5f5f5;
+      }
+
+      main button:hover::before {
+        transform: translate(-50%, -50%) scale(10);
+      }
+
+      html body.switch main h1  {
+        transform: translateY(100%);
+      }
+
+      @keyframes line {
+
+        to {
+            scale: 1 1;
+        }
+        
+      }
+
+      @keyframes elementVisibleText {
+
+        to {
+            transform: translateY(-.2em);
+        }
+        
+      }
+
+      @keyframes elementVisibleBtn {
+
+         to {
+              transform: translateY(1em);
+            }
+
+    }
+
+    body ul > li {
+        opacity: 0;
+        animation: translateBack .8s 1.9s forwards;
+    }
+
+    body ul > li:nth-child(1) {
+        transform: translateX(-6em);
+        
+    }
+
+    body ul > :is(li:nth-child(2), li:nth-child(3)) {
+        transform: translateY(-6em);
+    }
+
+    body ul > li:nth-child(4) {
+        transform: translateX(6em);
+    }
+
+    
+    @keyframes translateBack {
+
+        to {
+            transform: translate(0,0);
+            opacity: 1;
+        }
+        
+    }
+
+
+
+    @media (min-width: 930px) {
+      :root {
+        --listGap: 6em;
+      }
+
+
+    }

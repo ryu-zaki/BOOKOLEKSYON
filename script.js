@@ -1,18 +1,13 @@
 import { booksCategory, displayBooks, appendBookInfo, bookCategoryFilter, handleSearch } from "./api/Functionalities.js";
 import AllBooks from "./api/ApiSource.js";
-
-const menuItems = document.querySelectorAll('.separator .item .click-trigger');
 const loadingAnimation = document.querySelector(".loading-animation");
-const filterBtn = document.getElementById('filter');
-const filter = document.getElementById('filter-box');
-let filterBtnisOpen = false;
-
+window.onload = () => {
+    loadingAnimation.style.display = "none"
+}
+const menuItems = document.querySelectorAll('.separator .item .click-trigger');
 const menuBtn = document.getElementById('menu');
 const menu = document.getElementById('menu-box');
 let menuBtnisOpen = false;
-
-const inputBar = document.getElementById('input');
-let inputisFocused = false;
 
 const viewMarkBtn = document.querySelector('#view-mark-button .click-trigger');
 
@@ -20,12 +15,13 @@ const books = document.getElementsByClassName('book-cover');
 const mainSection = document.getElementById('main');
 const separator = document.getElementById('separator');
 const information = document.getElementById('information');
+const bookmarkModal = document.querySelector('.alert-modal');
 let bookisClick = false;
 let isSorted = false;
 let isMarkOnly = false;
 
 const reRenderMainPage = ({category, isSorted, isMarkOnly}) => {
-    const collection = bookCategoryFilter(category, isSorted, isMarkOnly);
+    const collection = bookCategoryFilter(category, !!isSorted, !!isMarkOnly);
     displayBooks(collection, allBookmarks);
     activateBookCatalogEvents();
 }
@@ -38,26 +34,6 @@ menuItems.forEach(menuItem => {
 
         menuItem.parentElement.classList.add('active')
     })
-})
-
-filterBtn.addEventListener('click', () => {
-    if(filterBtnisOpen){
-        filter.style.display = 'none';
-    }else{
-        filter.style.display = 'flex';
-        menu.style.display = 'none'
-    }
-    filterBtnisOpen = !filterBtnisOpen;
-})
-
-menuBtn.addEventListener('click', () => {
-    if(menuBtnisOpen){
-        menu.style.display = 'none';
-    }else{
-        menu.style.display = 'flex';
-        filter.style.display = 'none';
-    }
-    menuBtnisOpen = !menuBtnisOpen;
 })
 
 //view bookmarks event
@@ -138,6 +114,7 @@ const activateBookCatalogEvents = () => {
             if (bookmark.src.endsWith('resource/bookmark-svgrepo-com(outline).svg')) {
                 bookmark.src = 'resource/bookmark-svgrepo-com(full).svg';
                 allBookmarks.push(book);
+                handleBookmarkMsg("added to bookmark")
             } else {
                 bookmark.src = 'resource/bookmark-svgrepo-com(outline).svg';
                 
@@ -147,14 +124,46 @@ const activateBookCatalogEvents = () => {
 
                 allBookmarks = [...newBookmarks]
                 
+                handleBookmarkMsg("removed to bookmark")
+                
             }
 
             localStorage.setItem("bookmarks", JSON.stringify(allBookmarks));
-
-            console.log(JSON.parse(localStorage.getItem('bookmarks')));
             
         });
     });
+}
+
+/* Bookmark functionality on every individual book page */
+
+const activateBookSave = () => {
+    const saveBtn = document.querySelector('.save-book > .click-trigger');
+    const label = document.querySelector('.save-book h3');
+
+    saveBtn.addEventListener('click', ({target}) => {
+        const isSaved = allBookmarks.some(data => {
+            return data.title === target.id
+        });
+
+        if (isSaved) {
+            label.innerText = "Save"
+            const newBookmarks = allBookmarks.filter(book => {
+                return book.title !== target.id;
+            })
+            allBookmarks = [...newBookmarks];
+            handleBookmarkMsg("removed to bookmark")
+        } else {
+            label.innerText = "Unsave"
+            const selectedBook = AllBooks.find(data => {
+                return data.title === target.id;
+            });
+            
+            handleBookmarkMsg("added to bookmark")
+            allBookmarks.push(selectedBook);
+        }
+
+        localStorage.setItem("bookmarks", JSON.stringify(allBookmarks));
+    })
 }
 
 const generateIndividualBook = (bookInfo) => {
@@ -215,4 +224,23 @@ const searchInput = document.querySelector("#book-search-input");
 searchInput.addEventListener('input', handleSearch)
 
 
-export {generateIndividualBook}
+/* Bookmark add message modal */
+const handleBookmarkMsg = (message) => {
+    bookmarkModal.classList.add("active")
+    bookmarkModal.querySelector('p').innerText = message;
+
+    setTimeout(() => {
+        bookmarkModal.classList.remove("active")
+    }, 1500);
+}
+
+/* back to intropage */
+const webTitle = document.querySelector('[data-web-title]');
+
+webTitle.addEventListener('click', () => {
+    location.href = "/"
+})
+
+
+
+export {generateIndividualBook, activateBookSave, reRenderMainPage}
