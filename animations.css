@@ -1,0 +1,42 @@
+.book-catalog .book-cover {
+    transform: translateY(-5em);
+    z-index: 10;
+    opacity: 0;
+    animation: backState .8s forwards;
+}
+
+.book-catalog .bookmark-icon {
+    transform: translateX(-5em);
+    opacity: 0;
+    animation: backState .6s .4s forwards;
+}
+
+@keyframes backState {
+
+    to {
+        transform: translate(0,0) scale(1);
+        opacity: 1;
+    }
+    
+}
+
+/* Individual Page */
+
+.focused-book .book-container{
+    transform: scale(.4);
+    opacity: 0;
+    animation: backState .6s .2s forwards;
+}
+
+.focused-book-info {
+    transform: translateX(-5em);
+    opacity: 0;
+    animation: backState .6s .2s forwards;
+}
+
+.no-contributor {
+    font-size: .8em;
+    color: #666;
+    
+}
+

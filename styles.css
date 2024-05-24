@@ -968,6 +968,7 @@ html {
     font-family: var(--font-var-3);
     font-weight: 400;
     font-size: .9rem;
+    line-height: 1.6;
     color: var(--black-text);
     word-spacing: 3px;
 }
@@ -987,7 +988,8 @@ html {
     font-family: var(--font-var-3);
     font-weight: 400;
     font-size: .8rem;
-    color: var(--black-text)
+    color: var(--black-text);
+    margin-top: .5em;
 }
 
 /* SOURCE */

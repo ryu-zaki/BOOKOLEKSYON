@@ -678,121 +678,10 @@ const AllBooks = [
 
 
 
-      /* Technology */
-      {
-        "title": "The Innovators: How a Group of Hackers, Geniuses, and Geeks Created the Digital Revolution",
-        "author": "Walter Isaacson",
-        "ratings": 4.2,
-        "synopsis": "This book tells the story of the people who created the computer and the Internet revolution, from Ada Lovelace and Alan Turing to Bill Gates and Steve Jobs.",
-        "pages": 560,
-        "characters": [],
-        "genre": "Technology"
-      },
-      {
-        "title": "The Phoenix Project: A Novel About IT, DevOps, and Helping Your Business Win",
-        "author": "Gene Kim, Kevin Behr, George Spafford",
-        "ratings": 4.5,
-        "synopsis": "This novel follows an IT manager as he tries to salvage a failing IT project, using principles from the DevOps movement to transform his organization.",
-        "pages": 384,
-        "characters": [],
-        "genre": "Technology"
-      },
-      {
-        "title": "Zero to One: Notes on Startups, or How to Build the Future",
-        "author": "Peter Thiel, Blake Masters",
-        "ratings": 4.2,
-        "synopsis": "Entrepreneur and investor Peter Thiel shares his insights on startups and innovation, offering unconventional ideas for building a successful business.",
-        "pages": 224,
-        "characters": [],
-        "genre": "Technology"
-      },
-      {
-        "title": "The Soul of a New Machine",
-        "author": "Tracy Kidder",
-        "ratings": 4.3,
-        "synopsis": "This Pulitzer Prize-winning book follows a team of engineers at Data General as they race to design a new computer against a tight deadline.",
-        "pages": 293,
-        "characters": [],
-        "genre": "Technology"
-      },
-      {
-        "title": "Hackers: Heroes of the Computer Revolution",
-        "author": "Steven Levy",
-        "ratings": 4.2,
-        "synopsis": "Levy explores the early days of computing, profiling the hackers who pioneered the field and shaped the digital world we live in today.",
-        "pages": 520,
-        "characters": [],
-        "genre": "Technology"
-      },
-      {
-        "title": "Elon Musk: Tesla, SpaceX, and the Quest for a Fantastic Future",
-        "author": "Ashlee Vance",
-        "ratings": 4.5,
-        "synopsis": "Journalist Ashlee Vance delves into the life of entrepreneur Elon Musk, exploring his ambitious projects and vision for the future.",
-        "pages": 400,
-        "characters": [],
-        "genre": "Technology"
-      },
-      {
-        "title": "Algorithms to Live By: The Computer Science of Human Decisions",
-        "author": "Brian Christian, Tom Griffiths",
-        "ratings": 4.2,
-        "synopsis": "This book applies principles from computer science to everyday life, offering insights into decision-making and problem-solving.",
-        "pages": 368,
-        "characters": [],
-        "genre": "Technology"
-      },
-      {
-        "title": "The Second Machine Age: Work, Progress, and Prosperity in a Time of Brilliant Technologies",
-        "author": "Erik Brynjolfsson, Andrew McAfee",
-        "ratings": 4.1,
-        "synopsis": "Brynjolfsson and McAfee explore the impact of technological progress on the economy and society, offering strategies for navigating the digital age.",
-        "pages": 320,
-        "characters": [],
-        "genre": "Technology"
-      },
-      {
-        "title": "Code: The Hidden Language of Computer Hardware and Software",
-        "author": "Charles Petzold",
-        "ratings": 4.6,
-        "synopsis": "Petzold demystifies the world of computers by explaining how hardware and software work together to execute code, from binary digits to high-level programming languages.",
-        "pages": 400,
-        "characters": [],
-        "genre": "Technology"
-      },
-      {
-        "title": "The Art of Invisibility: The World's Most Famous Hacker Teaches You How to Be Safe in the Age of Big Brother and Big Data",
-        "author": "Kevin Mitnick",
-        "ratings": 4.3,
-        "synopsis": "Former hacker turned security consultant Kevin Mitnick shares tips and techniques for protecting your privacy and security in the digital age.",
-        "pages": 320,
-        "characters": [],
-        "genre": "Technology"
-      },
-      {
-        "title": "Ghost in the Wires: My Adventures as the World's Most Wanted Hacker",
-        "author": "Kevin Mitnick, William L. Simon",
-        "ratings": 4.2,
-        "synopsis": "Mitnick recounts his experiences as a notorious hacker, detailing his exploits and eventual capture by the FBI.",
-        "pages": 432,
-        "characters": [],
-        "genre": "Technology"
-      },
-      {
-        "title": "The Everything Store: Jeff Bezos and the Age of Amazon",
-        "author": "Brad Stone",
-        "ratings": 4.4,
-        "synopsis": "Journalist Brad Stone provides an inside look at the rise of Amazon and its founder, Jeff Bezos, exploring the company's disruptive impact on retail and technology.",
-        "pages": 384,
-        "characters": [],
-        "genre": "Technology"
-      },
-
-
-
       /* Mathematics */
 {
     "title": "Principles of Mathematical Analysis",
+    "pdf": "https://david92jackson.neocities.org/images/Principles_of_Mathematical_Analysis-Rudin.pdf",
     "author": "Walter Rudin",
     "ratings": 4.6,
     "synopsis": "This classic analysis textbook provides a rigorous foundation in real analysis, covering topics such as sequences, series, continuity, differentiation, and integration.",
@@ -802,6 +691,7 @@ const AllBooks = [
   },
   {
     "title": "Linear Algebra and Its Applications",
+    "pdf": "https://edisciplinas.usp.br/pluginfile.php/3020714/mod_folder/content/0/Strang%20G.-Linear%20algebra%20and%20its%20applications-Brooks%20(2005).pdf?forcedownload=1",
     "author": "Gilbert Strang",
     "ratings": 4.5,
     "synopsis": "An accessible introduction to linear algebra, focusing on applications in science, engineering, and other fields. It covers topics such as vector spaces, matrices, eigenvalues, and eigenvectors.",
@@ -811,6 +701,7 @@ const AllBooks = [
   },
   {
     "title": "Introduction to Probability",
+    "pdf": "https://uni.dcdev.ro/y2s2/ps/Introduction%20to%20Probability%20by%20Joseph%20K.%20Blitzstein,%20Jessica%20Hwang%20(z-lib.org).pdf",
     "author": "Joseph K. Blitzstein, Jessica Hwang",
     "ratings": 4.4,
     "synopsis": "This book offers a comprehensive introduction to probability theory, covering both discrete and continuous probability, random variables, distributions, and statistical inference.",
@@ -819,7 +710,8 @@ const AllBooks = [
     "genre": "Mathematics"
   },
   {
-    "title": "Calculus: Early Transcendentals",
+    "title": "Calculus",
+    "pdf": "https://www.fd.cvut.cz/department/k611/pedagog/K611GM_A_soubory/GMliteratura_soubory/Stewart_Calculus_6ed.pdf",
     "author": "James Stewart",
     "ratings": 4.7,
     "synopsis": "A widely used calculus textbook that emphasizes conceptual understanding and applications. It covers topics such as limits, derivatives, integrals, and infinite series.",
@@ -829,6 +721,7 @@ const AllBooks = [
   },
   {
     "title": "Discrete Mathematics and Its Applications",
+    "pdf": "https://faculty.ksu.edu.sa/sites/default/files/rosen_discrete_mathematics_and_its_applications_7th_edition.pdf",
     "author": "Kenneth H. Rosen",
     "ratings": 4.3,
     "synopsis": "An essential textbook for computer science and mathematics students, covering topics such as logic, sets, functions, graph theory, and combinatorics.",
@@ -837,7 +730,8 @@ const AllBooks = [
     "genre": "Mathematics"
   },
   {
-    "title": "The Art of Problem Solving, Volume 1: The Basics",
+    "title": "The Art of Problem Solving",
+    "pdf": "https://toaz.info/doc-view-3",
     "author": "Sandor Lehoczky, Richard Rusczyk",
     "ratings": 4.8,
     "synopsis": "Designed for high school students preparing for math competitions, this book covers fundamental problem-solving techniques in algebra, geometry, and number theory.",
@@ -848,6 +742,7 @@ const AllBooks = [
   {
     "title": "A Mathematician's Apology",
     "author": "G.H. Hardy",
+    "pdf": "https://www.arvindguptatoys.com/arvindgupta/mathsapology-hardy.pdf",
     "ratings": 4.1,
     "synopsis": "An autobiographical essay by the eminent mathematician G.H. Hardy, reflecting on the beauty and significance of mathematics and the role of mathematicians in society.",
     "number_of_pages": 153,
@@ -855,7 +750,8 @@ const AllBooks = [
     "genre": "Mathematics"
   },
   {
-    "title": "How to Solve It: A New Aspect of Mathematical Method",
+    "title": "How to Solve It",
+    "pdf": "https://math.hawaii.edu/home/pdf/putnam/PolyaHowToSolveIt.pdf",
     "author": "George Pólya",
     "ratings": 4.6,
     "synopsis": "This influential book presents general methods for solving mathematical problems, emphasizing heuristic approaches, problem-solving strategies, and the importance of understanding the problem before attempting a solution.",
@@ -864,13 +760,107 @@ const AllBooks = [
     "genre": "Mathematics"
   },
   {
-    "title": "Gödel, Escher, Bach: An Eternal Golden Braid",
+    "title": "Gödel, Escher, Bach",
     "author": "Douglas Hofstadter",
+    "pdf": "https://www.physixfan.com/wp-content/files/GEBen.pdf",
     "ratings": 4.3,
     "synopsis": "A Pulitzer Prize-winning exploration of the connections between mathematics, art, and music, weaving together the works of mathematician Kurt Gödel, artist M.C. Escher, and composer Johann Sebastian Bach.",
     "number_of_pages": 824,
     "characters": [],
     "genre": "Mathematics"
+  },
+
+
+  /* Technology */
+  {
+    "title": "The Innovators",
+    "pdf": "https://www.vianolavie.org/wp-content/uploads/sites/388/2019/02/INNOVATORS-by-Walter-Isaacson-Tulane-Copy.pdf",
+    "author": "Walter Isaacson",
+    "ratings": 4.4,
+    "synopsis": "A revealing story of the people who created the computer and the Internet. It chronicles the contributions of pioneers like Ada Lovelace, Alan Turing, and Steve Jobs.",
+    "number_of_pages": 560,
+    "characters": ["Ada Lovelace", "Alan Turing", "Steve Jobs", "Bill Gates", "Larry Page", "Sergey Brin"],
+    "genre": "Technology"
+  },
+  {
+    "title": "Clean Code",
+    "pdf": "https://ptgmedia.pearsoncmg.com/images/9780132350884/samplepages/9780132350884.pdf",
+    "author": "Robert C. Martin",
+    "ratings": 4.6,
+    "synopsis": "A handbook of agile software craftsmanship that teaches principles and best practices for writing clean, maintainable code.",
+    "number_of_pages": 464,
+    "characters": ["Developers", "Software Engineers"],
+    "genre": "Technology"
+  },
+  {
+    "title": "The Lean Startup",
+    "pdf": "https://ia800509.us.archive.org/7/items/TheLeanStartupErickRies/The%20Lean%20Startup%20-%20Erick%20Ries.pdf",
+    "author": "Eric Ries",
+    "ratings": 4.3,
+    "synopsis": "A book on how to effectively create and manage startups using lean principles, minimizing waste and maximizing customer value.",
+    "number_of_pages": 336,
+    "characters": ["Entrepreneurs", "Startup Founders"],
+    "genre": "Technology"
+  },
+  {
+    "title": "Algorithms to Live By",
+    "pdf": "https://kolegite.com/EE_library/books_and_lectures/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%B8%D1%80%D0%B0%D0%BD%D0%B5/algorithms-to-live-by-the-computer-science-of-tom--annas-archive--libgenrs-nf-3206012.pdf",
+    "author": "Brian Christian and Tom Griffiths",
+    "ratings": 4.5,
+    "synopsis": "An exploration of how computer algorithms can be applied to our everyday lives to solve common decision-making problems.",
+    "number_of_pages": 368,
+    "characters": ["Humans", "Algorithms"],
+    "genre": "Technology"
+  },
+  {
+    "title": "The Phoenix Project",
+    "pdf": "https://www.haio.ir/app/uploads/2021/12/The-Phoenix-Project-A-Novel-about-IT-DevOps-and-Helping-Your-Business-Win-by-Gene-Kim-George-Spafford-Kevin-Behr-z-lib.org_.pdf",
+    "author": "Gene Kim, Kevin Behr, and George Spafford",
+    "ratings": 4.6,
+    "synopsis": "A novel that presents a fictional story of a company struggling with IT issues and how implementing DevOps practices transforms their operations.",
+    "number_of_pages": 432,
+    "characters": ["Bill Palmer", "Steve Masters", "Erik Reid"],
+    "genre": "Technology"
+  },
+  {
+    "title": "Hooked",
+    "pdf": "https://toaz.info/doc-view-3",
+    "author": "Nir Eyal",
+    "ratings": 4.3,
+    "synopsis": "A guide on creating habit-forming technology products by understanding and leveraging user psychology.",
+    "number_of_pages": 256,
+    "characters": ["Product Managers", "Designers"],
+    "genre": "Technology"
+  },
+  {
+    "title": "Code",
+    "pdf": "https://bobcarp.wordpress.com/wp-content/uploads/2014/07/code-charles-petzold.pdf",
+    "author": "Charles Petzold",
+    "ratings": 4.7,
+    "synopsis": "An in-depth look at the fundamentals of computer hardware and software, revealing the hidden language behind technology.",
+    "number_of_pages": 400,
+    "characters": ["Computers", "Code"],
+    "genre": "Technology"
+  },
+  {
+    "title": "The Singularity Is Near",
+    "pdf": "https://paisdospuntocero.wordpress.com/wp-content/uploads/2018/04/book-kurzweil-singularity-is-near-1.pdf",
+    "author": "Ray Kurzweil",
+    "ratings": 4.2,
+    "synopsis": "A look into the future of technology and its impact on humanity, predicting a future where artificial intelligence surpasses human intelligence.",
+    "number_of_pages": 652,
+    "characters": ["Humans", "Artificial Intelligence"],
+    "genre": "Technology"
+  },
+  {
+    "title": "Ghost in the Wires",
+    "pdf": "https://bibliocecifi.wordpress.com/wp-content/uploads/2017/05/ghost-in-the-wires-kevin-mitnick.pdf",
+    "author": "Kevin D. Mitnick",
+    "ratings": 4.6,
+    "synopsis": "An autobiographical account of Kevin Mitnick's exploits as a hacker and his journey from fugitive to one of the most respected cybersecurity experts.",
+    "number_of_pages": 432,
+    "characters": ["Kevin Mitnick", "Law Enforcement"],
+    "genre": "Technology"
   }
   ]
   

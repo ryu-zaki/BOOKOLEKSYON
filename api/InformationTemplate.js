@@ -3,6 +3,15 @@ import AllBooks from "./ApiSource.js";
 const setTemplate = (info) => {
 
     const {title, author, synopsis, ratings, characters, genre, pdf} = info;
+    const bookMarks =  localStorage.getItem("bookmarks") ?  JSON.parse(localStorage.getItem("bookmarks")) : [];
+
+    const isMarked = bookMarks.some(data => {
+  
+      return data.title === title;
+    });
+
+    console.log(isMarked)
+
   
     const stars = [];
 
@@ -74,7 +83,7 @@ const setTemplate = (info) => {
           <h2><span>CONTRIBUTORS</span></h2>
           <div class="content characters">
             <ul>
-              ${contributors.join("")}
+              ${contributors.length ? contributors.join("") : `<p class="no-contributor"><b><i>No Contributors<i><b></p>`}
             </ul>
           </div>
         </div>
@@ -85,11 +94,12 @@ const setTemplate = (info) => {
 
       <div class="upper">
 
-        <div class="item">
+        <div class="item save-book relative">
+          <div id="${title}" class="click-trigger"></div>
           <div class="bookmark">
             <img src="resource/bookmark-svgrepo-com(violet).svg" alt="">
           </div>
-          <h3>Unsave</h3>
+          <h3>${isMarked ? "Unsave" : "Save"}</h3>
         </div>
 
         <div class="item">

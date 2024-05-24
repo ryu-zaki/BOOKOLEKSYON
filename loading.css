@@ -7,7 +7,7 @@
     z-index: 9999;
     color: #f5f5f5;
 
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 1em;

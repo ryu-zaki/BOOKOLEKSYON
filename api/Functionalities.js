@@ -1,6 +1,6 @@
 import AllBooks from './ApiSource.js';
 import setTemplate from './InformationTemplate.js';
-import { generateIndividualBook } from '../script.js';
+import { generateIndividualBook, activateBookSave, reRenderMainPage } from '../script.js';
 
 const bookCategoryFilter = (category, isSorted = false, isMarkOnly = false) => {
   
@@ -84,6 +84,7 @@ const displayBooks = (books, allBookmarks) => {
 
     const itemDiv = document.createElement("div");
     itemDiv.classList.add("item");
+    itemDiv.classList.add("book-catalog")
     
     const isBookMarked = allBookmarks.some(data => {
       return data.title === books[i].title
@@ -101,7 +102,7 @@ const appendBookInfo = (container, info) => {
   container.innerHTML = setTemplate(info);
   
   activateInfoEventListeners();
-
+  activateBookSave();
   /* Click Events of suggested books */
   bookSuggestionsEvents();
 
@@ -114,7 +115,9 @@ const activateInfoEventListeners = () => {
   const information = document.getElementById('information');
 
   backBtn.addEventListener('click',  () => {
-
+    const activeNavText = document.querySelector('.separator .item.active h3').innerText;
+    reRenderMainPage({category: activeNavText.toLocaleLowerCase(),})
+  
     information.style.display='none';
     mainSection.style.display='flex';
     separator.style.display='flex';

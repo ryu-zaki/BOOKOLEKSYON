@@ -9,6 +9,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
     />
+    <link rel="stylesheet" href="./animations.css" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="responsive.css" />
     <link rel="stylesheet" href="./loading.css" />
@@ -17,6 +18,11 @@
     <script src="https://cdn.lordicon.com/lordicon.js" defer></script>
   </head>
   <body>
+    <div class="alert-modal flex items-center fixed">
+      <p>added to bookmark</p>
+      <img draggable="false" src="./resource/checked-icon.png" alt="" />
+    </div>
+
     <div class="loading-animation">
       <div class="animation">
         <lord-icon
@@ -34,124 +40,23 @@
     
   <div class="header">
     <div class="web-title">
-      <img src="resource/bookoleksyon.png" alt="Bookleksyon">
+      <img data-web-title src="resource/bookoleksyon.png" alt="Bookleksyon">
     </div>
     <div class="search relative">
       <button id="search">
         <img src="resource/search-svgrepo-com.svg" alt="search icon">
       </button>
       <input id="book-search-input" type="text" placeholder="Search for book titles" class="hide">
-        
-      <button id="filter" class="hide">
-        <img src="resource/filter-svgrepo-com.svg" alt="filter icon">
-      </button>
       
       <!-- Auto Suggestion -->
       <div data-autosuggestion class="absolute z-10 suggestions-con translate-y-full w-full left-0 bottom-0">
 
       </div>
 
-        <div class="filter" id="filter-box">
-          <div class="label">
-            <h3>Filter Search</h3>
-          </div>
-          <form>
-            <h3>Genre</h3>
-            <div class="genre">
-              <div class="left">
-                <div class="item">
-                  <input type="checkbox" />
-                  <label>Fiction</label>
-                </div>
-                <div class="item">
-                  <input type="checkbox" />
-                  <label>Biography</label>
-                </div>
-                <div class="item">
-                  <input type="checkbox" />
-                  <label>History</label>
-                </div>
-                <div class="item">
-                  <input type="checkbox" />
-                  <label>Science</label>
-                </div>
-              </div>
-              <div class="right">
-                <div class="item">
-                  <input type="checkbox" />
-                  <label>Computer</label>
-                </div>
-                <div class="item">
-                  <input type="checkbox" />
-                  <label>Mathematics</label>
-                </div>
-                <div class="item">
-                  <input type="checkbox" />
-                  <label>Non-Fiction</label>
-                </div>
-                <div class="item">
-                  <input type="checkbox" />
-                  <label>Education</label>
-                </div>
-              </div>
-            </div>
-          </form>
-          <!--
-        <div class="ratings">
-          <h3>Ratings</h3>
-          <div class="rating">
-            <input type="radio" id="star5" name="rating" value="5" class="rating">
-            <label for="star5"></label>
-            <input type="radio" id="star4" name="rating" value="4" class="rating">
-            <label for="star4"></label>
-            <input type="radio" id="star3" name="rating" value="3" class="rating">
-            <label for="star3"></label>
-            <input type="radio" id="star2" name="rating" value="2" class="rating">
-            <label for="star2"></label>
-            <input type="radio" id="star1" name="rating" value="1" class="rating">
-            <label for="star1"></label>
-          </div>
-        </div>
-        --></div>
+        
       </div>
 
-      <button id="menu" class="hamburger">
-        <img src="resource/menu-svgrepo-com.svg" alt="menu icon" />
-      </button>
-
-      <div class="menu" id="menu-box">
-        <div class="x-icon-bg">
-          <img src="resource/cross-svgrepo-com.svg" alt="" class="x-icon" />
-        </div>
-
-        <div class="label">
-          <h3>Menu</h3>
-        </div>
-        <div class="item">
-          <div class="bg profile">
-            <img src="resource/question-mark-svgrepo-com.svg" alt="qs icon" />
-          </div>
-          <h3>How to Use?</h3>
-        </div>
-        <div class="item">
-          <div class="bg profile">
-            <img
-              src="resource/profile-about-mobile-ui-svgrepo-com.svg"
-              alt="profile icon"
-            />
-          </div>
-          <h3>Creator</h3>
-        </div>
-        <div class="item">
-          <div class="bg phone">
-            <img
-              src="resource/telephone-fill-svgrepo-com.svg"
-              alt="telephone icon"
-            />
-          </div>
-          <h3>Contact Us</h3>
-        </div>
-      </div>
+      
     </div>
 
     <div class="separator hide" id="separator">
@@ -181,7 +86,7 @@
       </div>
       <div class="item">
         <span class="click-trigger"></span>
-        <h3>COMPUTER</h3>
+        <h3>TECHNOLOGY</h3>
       </div>
       <div class="item">
         <span class="click-trigger"></span>
